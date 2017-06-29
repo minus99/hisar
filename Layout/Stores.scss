@@ -47,7 +47,6 @@
             text-align: center;
             h1{
                 margin: 0 0 0 0;
-                /*font-family:$fB;*/
                 font-size: 20px;
                 text-align: left;
                 color: $colorDefault;
@@ -103,7 +102,7 @@
                 }
                 > div {width:25%;}
             }
-            .country {display: none;}
+            .country {display: none !important;}
             
             .stores {
                 &::before {content: 'Servis Türü';}
@@ -165,9 +164,6 @@
                 }
                 &.selected {
                     .divServisListe_Koordinat {
-                        a:before {
-                            @include setTransform(rotate(90deg));
-                        }
                         span {
                             span.gs1 {display:none;}
                             span.gs2 {display:inline-block;}
@@ -187,13 +183,11 @@
                     .back-btn {display:none;} 
                     .left-column {
                         width: 40%;
-                        float:left;
                         .title {
-                            /*background:$lBlue;*/
+                            background:$pink;
                             font-size:18px;
                             padding:10px 20px;
                             text-align: center;
-                            /*font-family: $fB;*/
                             color: #fff;
                             max-height: 75px;
                             line-height: 1.1;
@@ -211,7 +205,6 @@
                                         th {
                                             width:188px;
                                             border: 1px solid $borderColor;
-                                            /*font-family:$fD;*/
                                             font-size: 16px;
                                             color:#000;
                                             border-bottom: 0;
@@ -223,7 +216,6 @@
                                             border: 1px solid $borderColor;
                                             font-size: 16px; 
                                             color:#000;
-                                            /*font-family: $fD;*/
                                         }
                                     }
                                     tr:last-child {
@@ -254,7 +246,7 @@
                     margin-left: -20px;
                     .pServisListe {
                         width: calc((100% / 3));
-                        padding-left: 20px;
+                        padding: 0px 20px;
                         border-left: 1px solid #d4d4d4;
                         &:first-child {
                             border-left: none;
@@ -270,6 +262,9 @@
 }
 
 @media screen and (max-width:$breakpointSM) {
+    .mod-service-list-inner {
+        padding: 30px 40px;
+    }
     .ems-service-list {
         .row-1 { display:none !important; }
         .mod-service-list { 
@@ -354,9 +349,8 @@
                                                 vertical-align: middle;
                                                 display: inline-block;
                                                     &:before {
-                                                    content: '\e917';
+                                                    content: '\e901';
                                                     font-family: 'icomoon';
-                                                    /*color: $lBlue;*/
                                                     font-size:25px; 
                                                     margin-right:20px;
                                                 }
@@ -373,11 +367,9 @@
                                         .divServisListe_FirmaAdi {font-size:20px; color: $pink; margin: 20px 0;}
                                         .divServisListe_Adres, .divServisListe_UlkeSehirSemt{
                                             font-size:15px;
-                                            /*color:$sText;*/
                                         }
                                         .divServisListe_Telefon {
                                             padding: 15px 20px; 
-                                            /*background: $lBlue;*/
                                             position:fixed;
                                             bottom:0;
                                             font-size: 18px;
@@ -400,7 +392,6 @@
                                                         content: "ARA";
                                                         float: right;
                                                         font-size: 17px;
-                                                        /*font-family: $fD;*/
                                                         margin-left: 25px;
                                                         position: relative;
                                                         top: 5px;
@@ -419,9 +410,7 @@
                                                         th {
                                                             width:188px;
                                                             border: 1px solid $borderColor;
-                                                            /*font-family:$fD;*/
                                                             font-size: 16px;
-                                                            /*color:$lBlue;*/
                                                             border-bottom: 0;
                                                             border-top: 0;
                                                         }
@@ -430,8 +419,6 @@
                                                             background: #f0f3f5;
                                                             border: 1px solid $borderColor;
                                                             font-size: 16px;
-                                                            /*color:$lBlue;*/
-                                                            /*font-family: $fD;*/
                                                         }
                                                     }
                                                     tr:last-child {
@@ -440,12 +427,10 @@
                                                     tr:first-child {border-top:1px solid $borderColor;} 
                                                 }
                                                 .service-work-hours {
-                                                    /*background: $lBlue;*/
                                                     font-size: 18px;
                                                     letter-spacing: 0.6px;
                                                     padding: 15px;
                                                     text-align: center;
-                                                    /*font-family: $fD;*/
                                                     color: #fff;
                                                     max-height: 76px;
                                                     display: inline-block;
@@ -458,6 +443,7 @@
                                 }
                                 .right-column {
                                     width:100%;
+                                    float: none;
                                 }
                             }
                         }
@@ -467,5 +453,13 @@
     }
     .address-detail-show {
     .site-content {position: fixed; width:100%; height:100%; top:0; z-index:50;}
+    }
+    .services-list-banner {height: 406px;}
+    .service-list-group {margin: 0px !important; flex-wrap: wrap;}
+    .ems-service-list .mod-service-list .mod-service-list-body .servisIcerik .pServisListe {
+        width: 100%;
+        border-left: 0px !important;
+        margin-bottom: 20px;
+        padding-bottom: 20px !important;
     }
 }
