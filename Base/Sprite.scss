@@ -1,0 +1,336 @@
+@include fontFace('icomoon', '/styles/fonts/icon/icomoon', normal, normal);
+
+$icon-siparis-uzerine: "\e926";
+$icon-10cr-ni-pcelik: "\e925";
+$icon-10pcelik: "\e927";
+$icon-aisi-420-iicelik: "\e929";
+$icon-blsk-hss: "\e92b";
+$icon-can-yalman: "\e92c";
+$icon-ilk-kullanim-yikama: "\e92f";
+$icon-inci-mutlu: "\e930";
+$icon-ind-ocak: "\e933";
+$icon-tm-ocak: "\e934";
+$icon-share: "\e924";
+$icon-angle-down: "\e900";
+$icon-angle-left: "\e901";
+$icon-angle-right: "\e902";
+$icon-angle-up: "\e903";
+$icon-award: "\e904";
+$icon-bag: "\e905";
+$icon-box: "\e906";
+$icon-caret-down: "\e907";
+$icon-caret-left: "\e908";
+$icon-caret-right: "\e909";
+$icon-caret-up: "\e90a";
+$icon-cart: "\e90b";
+$icon-change: "\e90c";
+$icon-check: "\e90d";
+$icon-check-radius: "\e90e";
+$icon-close: "\e90f";
+$icon-close-bold: "\e910";
+$icon-credit-card: "\e911";
+$icon-dishwasher: "\e912";
+$icon-edit: "\e913";
+$icon-facebook: "\e914";
+$icon-hands: "\e915";
+$icon-heart: "\e916";
+$icon-heart-o: "\e917";
+$icon-instagram: "\e918";
+$icon-knife: "\e919";
+$icon-patent: "\e91a";
+$icon-percent: "\e91b";
+$icon-phone: "\e91c";
+$icon-pinterest: "\e91d";
+$icon-plus: "\e91e";
+$icon-question: "\e91f";
+$icon-search: "\e920";
+$icon-trash: "\e921";
+$icon-twitter: "\e922";
+$icon-youtube: "\e923";
+
+[class^="icon-"], [class*=" icon-"], [class^="icon_"], .icon, 
+a.btnFacebookLogin:before,
+.adresTip2:before,
+#lnkAdrTip_2:before,
+.member-menu li.selected a:before,
+.kutuBulten .kutuBodyBulten .kutuBulten_email:before,
+.urunKiyaslamaOzellik_temizle > a:before {
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-siparis-uzerine {
+  &:before {
+    content: $icon-siparis-uzerine;
+  }
+}
+.icon-10cr-ni-pcelik {
+  &:before {
+    content: $icon-10cr-ni-pcelik;
+  }
+}
+.icon-10pcelik {
+  &:before {
+    content: $icon-10pcelik;
+  }
+}
+.icon-aisi-420-iicelik {
+  &:before {
+    content: $icon-aisi-420-iicelik;
+  }
+}
+.icon-blsk-hss {
+  &:before {
+    content: $icon-blsk-hss;
+  }
+}
+.icon-can-yalman {
+  &:before {
+    content: $icon-can-yalman;
+  }
+}
+.icon-ilk-kullanim-yikama {
+  &:before {
+    content: $icon-ilk-kullanim-yikama;
+  }
+}
+.icon-inci-mutlu {
+  &:before {
+    content: $icon-inci-mutlu;
+  }
+}
+.icon-ind-ocak {
+  &:before {
+    content: $icon-ind-ocak;
+  }
+}
+.icon-tm-ocak {
+  &:before {
+    content: $icon-tm-ocak;
+  }
+}
+.icon-share {
+  &:before {
+    content: $icon-share;
+  }
+}
+.icon-angle-down {
+  &:before {
+    content: $icon-angle-down;
+  }
+}
+.icon-angle-left {
+  &:before {
+    content: $icon-angle-left;
+  }
+}
+.icon-angle-right {
+  &:before {
+    content: $icon-angle-right;
+  }
+}
+.icon-angle-up {
+  &:before {
+    content: $icon-angle-up;
+  }
+}
+.icon-award {
+  &:before {
+    content: $icon-award;
+  }
+}
+.icon-bag {
+  &:before {
+    content: $icon-bag;
+  }
+}
+.icon-box {
+  &:before {
+    content: $icon-box;
+  }
+}
+.icon-caret-down {
+  &:before {
+    content: $icon-caret-down;
+  }
+}
+.icon-caret-left {
+  &:before {
+    content: $icon-caret-left;
+  }
+}
+.icon-caret-right {
+  &:before {
+    content: $icon-caret-right;
+  }
+}
+.icon-caret-up {
+  &:before {
+    content: $icon-caret-up;
+  }
+}
+.icon-cart {
+  &:before {
+    content: $icon-cart;
+  }
+}
+.icon-change {
+  &:before {
+    content: $icon-change;
+  }
+}
+.icon-check {
+  &:before {
+    content: $icon-check;
+  }
+}
+.icon-check-radius {
+  &:before {
+    content: $icon-check-radius;
+  }
+}
+.icon-close {
+  &:before {
+    content: $icon-close;
+  }
+}
+.icon-close-bold {
+  &:before {
+    content: $icon-close-bold;
+  }
+}
+.icon-credit-card {
+  &:before {
+    content: $icon-credit-card;
+  }
+}
+.icon-dishwasher {
+  &:before {
+    content: $icon-dishwasher;
+  }
+}
+.icon-edit {
+  &:before {
+    content: $icon-edit;
+  }
+}
+.icon-facebook {
+  &:before {
+    content: $icon-facebook;
+  }
+}
+.icon-hands {
+  &:before {
+    content: $icon-hands;
+  }
+}
+.icon-heart {
+  &:before {
+    content: $icon-heart;
+  }
+}
+.icon-heart-o {
+  &:before {
+    content: $icon-heart-o;
+  }
+}
+.icon-instagram {
+  &:before {
+    content: $icon-instagram;
+  }
+}
+.icon-knife {
+  &:before {
+    content: $icon-knife;
+  }
+}
+.icon-patent {
+  &:before {
+    content: $icon-patent;
+  }
+}
+.icon-percent {
+  &:before {
+    content: $icon-percent;
+  }
+}
+.icon-phone {
+  &:before {
+    content: $icon-phone;
+  }
+}
+.icon-pinterest {
+  &:before {
+    content: $icon-pinterest;
+  }
+}
+.icon-plus {
+  &:before {
+    content: $icon-plus;
+  }
+}
+.icon-question {
+  &:before {
+    content: $icon-question;
+  }
+}
+.icon-search {
+  &:before {
+    content: $icon-search;
+  }
+}
+.icon-trash {
+  &:before {
+    content: $icon-trash;
+  }
+}
+.icon-twitter {
+  &:before {
+    content: $icon-twitter;
+  }
+}
+.icon-youtube {
+  &:before {
+    content: $icon-youtube;
+  }
+}
+.icon-yikama-kurulama {
+    &::before {
+        content: '';
+        width: 40px;
+        height: 32px;
+        display: inline-block;
+        background-image: url(#{$baseHref + "/images/frontend/yikama-icon.svg"});
+        background-repeat: no-repeat;
+    }
+}
+
+
+.ems-icon {
+	position: relative;
+    display:inline-block; 
+    vertical-align:middle; 
+    text-indent:-999em; 
+    transition: all 0.2s ease;
+	font-size: 0px;
+ 	@at-root {
+		.asd, .lang-tr { background:url(#{$baseHref + "/images/frontend/sprite.png"}) no-repeat; }
+		
+		.lang-tr {background-position:0 0; width:15px; height:10px;}
+		
+	}
+
+}
+
+.icon-circle{
+  border-radius: 50%;
+  border: 2px solid #adadad;
+  font-size: large !important;
+}

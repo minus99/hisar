@@ -1,0 +1,229 @@
+.site-footer{
+    background: #f4f4f4;
+    padding: 60px 0 25px 0;
+    @media screen and (max-width: $deviceMobile){
+        background: #e9e9e9;
+    }
+    &-row{
+        margin-bottom: 50px;
+    }
+    .kutuBulten{
+        width: 100%;
+        position: relative;
+        .kutuHeaderBulten{
+            display: none;
+        }
+        .kutuBodyBulten{
+            width: 100%;
+            display: inline-block;
+            vertical-align: top;
+            position: relative;
+            padding-right: 290px;
+            .kutuBulten_lbfAciklama{
+                float: right;
+                text-align: right;
+                padding-right: 30px;
+                min-height: 40px;
+                padding-top: 10px;
+                font-size: 16px;
+                color: $black;
+                line-height: 20px;
+                letter-spacing: 0.3px;
+                font-weight: 600;
+                width: 100%;
+            }
+            .btnBultenGonder{
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                display: block;
+                text-align: center;
+                line-height: 40px;
+                right: 0;
+                top: 0;
+            }
+            .kutuBulten_mesaj {
+                position: absolute;
+                right: 0;
+                bottom: -22px;
+                width: 30%;
+                font-size: 12px;
+                color: #928280;
+            }
+            .kutuBulten_email{
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 30%;
+                max-width: 290px;
+                input{
+                    margin: 0;
+                    border: 1px solid #d5d5d5;
+                    border-radius: 2px;
+                    background: #fff;
+                    padding: 10px 16px;
+                    font-size: 14px;
+                    color: #d9d9d9;
+                    letter-spacing: 0.3px;
+                    line-height: 20px;
+                    height: auto;
+                }
+            }
+            @media screen and (max-width: $deviceMobile){
+                padding-right: 0;
+                .kutuBulten_lbfAciklama{
+                    padding:  0 30px;
+                    float: none;
+                    text-align: center;
+                    margin-bottom: 28px;
+                }
+                .kutuBulten_mesaj,
+                .kutuBulten_email{
+                    text-align: center;
+                    margin: 0 auto;
+                    position: relative;
+                    top: initial;
+                    right: initial;
+                    max-width: 360px;
+                    width: 100%;
+                    padding: 0 30px;
+                }
+                .kutuBulten_btnBultenGonder{
+                    position: relative;
+                    max-width: 300px;
+                    width: 100%;
+                    padding: 0 30px;
+                    max-height: 0;
+                    margin: 0 auto;
+                    a.btnBultenGonder{
+                        top: -40px;
+                    }
+                }
+            }
+        }
+    }
+    .social-media-wrapper{
+        width: 100%;
+        text-align: center;
+        > ul{
+            display: inline-block;
+            vertical-align: top;
+            > li{
+                float: left;
+                margin-right: 60px;
+                &:last-child{
+                    margin-right: 0;
+                }
+                a{
+                    font-size: 30px;
+                    padding: 5px;
+                    &:hover{
+                        color: $pink;
+                    }
+                }
+            }
+            @media screen and (max-width: $deviceMobile){
+                display: table;
+                vertical-align: middle;
+                table-layout: fixed;
+                width: calc(100% - 40px);
+                margin: 0 20px;
+                > li{
+                    float: none;
+                    display: table-cell;
+                }
+            }
+        }
+    }
+    .footer-menu-row {
+        width: 100%;
+        display: inline-block;
+        vertical-align: top;
+        .left-colm {
+            float: left;
+            width: 30%;
+            a.telephone-icon-wrap {
+                display: block;
+                width: 100%;
+                max-width: 165px;
+                margin-bottom: 15px;
+                > span {
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 60px;
+                    margin-bottom: 15px;
+                }
+
+                > small {
+                    display:block;
+                    font-size: 15px;
+                    font-weight: normal;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 1.8;
+                    letter-spacing: 0.3px;
+                    text-align: center;
+                    color: $black;
+                }
+                > b{
+                    font-size: 20px;
+                    font-weight: bold;
+                    line-height: 1.35;
+                    letter-spacing: 0.4px;
+                }
+            }
+        }
+        .right-colm {
+            float: right;
+            width: 70%;
+            .footer-menu{
+                .lvl1{
+                    display: table;
+                    table-layout: fixed;
+                    width: 100%;
+                    > li{
+                        display: table-cell;
+                        > a{
+                            font-family: $fontSite;
+                            font-size: 18px;
+                            line-height: 1.11;
+                            letter-spacing: 0.4px;
+                            color: $black;
+                        }
+                    }
+                }
+                .lvl2{
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 100%;
+                    margin-top: 24px;
+                    > li{
+                        > a{
+                            font-family: $fontDefault;
+                            font-size: 16px;
+                            line-height: 1.94;
+                            letter-spacing: 0.3px;
+                            color: $black;
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: $deviceMobile){
+            display: none;
+        }
+    }
+    .copyright-row{
+        margin-bottom: 0;
+        p{
+            margin: 0;
+            text-align: center;
+            font-family: $fontDefault;
+            font-size: 12px;
+            line-height: 2.58;
+            letter-spacing: 0.2px;
+            color: $black;
+        }
+    }
+}

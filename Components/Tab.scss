@@ -1,0 +1,55 @@
+ul.navigation-js {
+    display: none;
+}
+
+ul.content-js{
+    > li { 
+        border-bottom: 1px solid #f4f4f4;
+        display: block;
+        &:last-child{
+            border-bottom: 0;
+        }
+        > a.title { 
+            font-family: $fontSite; 
+            font-size: 20px; 
+            line-height: 25px;
+            letter-spacing: 0.2px;
+            color: $black;
+            display: block;
+            padding: 15px 0 15px 26px; 
+            position: relative;
+            &:before { 
+                content: $icon-caret-right; 
+                @extend .icon;
+                position: absolute;
+                left: 0;
+                top: 23px;
+                font-size: 10px;
+                @include transition(all 0.3s ease-in-out);
+            }
+        }
+        > .content { 
+            display: none; 
+            margin: 0; 
+            padding: 0 10px 25px 45px;
+            font-size: 15px; 
+            line-height: 18px; 
+            color: $black; 
+            font-family: $fontDefault;
+            p{
+                margin: 0 0 15px 0;
+            }
+            span { 
+                margin: 10px 0;
+            }
+        }
+        &.selected{
+            > a:before {
+               @include setTransform(rotate(90deg));
+            }
+            .content {
+                display: block;
+            }
+        }
+    }
+}

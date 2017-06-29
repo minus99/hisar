@@ -1,0 +1,742 @@
+.ems-grid-default {
+    > div {
+        position: relative;
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+        > div {
+            display: table-cell;
+            position: relative;
+            vertical-align: middle;
+        }
+    }
+    .ems-grid-header {
+        position: relative;
+        border-bottom: 1px solid #eaeaea;
+        display: none;
+        &:first-child{
+            display: table;
+            padding: 0 25px;
+        }
+        > div {
+            font-family: $fontDefault;
+            font-size: 13px;
+            color: #979797;
+            padding: 12px 0;
+            text-align: center;
+            letter-spacing: 1px
+        }
+    }
+    .ems-grid-row {
+        position: relative;
+        border-bottom: 1px solid #eaeaea;
+        border-left: 1px solid #eaeaea;
+        border-right: 1px solid #eaeaea;
+        padding: 10px 25px;
+        > div {
+            font-family: $fontDefault;
+            font-size: 15px;
+            color: $black;
+            padding: 10px 0;
+            &:first-child {
+                border-left-width: 1px;
+            }
+        }
+        &:last-child {
+            > div {
+                border-bottom-width: 1px;
+            }
+        }
+        //grid items
+        .ems-grid-img {
+            a, img {
+                display: block;
+            }
+        }
+        .ems-grid-fav {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.85);
+            width: 36px;
+            height: 36px;
+            position: absolute;
+            left: 10px;
+            top: 100px; 
+            border-radius: 100%;
+            > a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                span {
+                    display: block;
+                    height: 100%;           
+                    i {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        font-size: 19px;
+                        color: #000;
+                        font-weight: bold;
+                        margin-top: -9.5px;
+                        margin-left: -9.5px;
+                        @include transition(all 0.2s ease);
+                    }
+                }
+            }
+            &:hover {
+                i {
+                    @include setTransform(scale(1.2));
+                }
+            }
+        }
+        .ems-grid-name {
+            font-family: $fontDefault;
+            font-size: 18px;
+        }
+        .ems-grid-gift-box {
+            margin-top: 17px;
+            font-size: 16px;
+            color: $darkBlue;
+            i {
+                position: relative;
+                top: 1px;
+                margin-right: 5px;
+            }
+        }
+        .ems-grid-piece {
+            text-align: center;
+            input {
+                width: 70px!important;
+                height: 45px;
+                line-height: 45px;
+                text-align: center;
+                border: 1px solid #d5d5d5;
+                margin: 0;
+            }
+            a {
+                display: none;
+                position: absolute;
+                left: 70%;
+                font-size: 11px;
+                color: #b7b7b7;
+                padding: 5px;
+                &:first-child {
+                    top: 54px;
+                }
+                &:last-child {
+                    top: 30px;
+                }
+                i {
+                    vertical-align: middle;
+                }
+            }
+        }
+        .ems-grid-delete {
+            i {
+                font-size: 14px;
+                color: #d1d1d1;
+            }
+        }
+        .ems-grid-price-total,
+        .ems-grid-price {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: 0.4px;
+            .pb1,
+            .d{
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 12px;
+                letter-spacing: 0.3px;
+            }
+            .pb1{
+                margin-left: 5px;
+            }
+            
+            .brFiyat,
+            .satBrFiyat,
+            .topFiyat,
+            .netFiyat{display: none !important;}
+            .brFiyatVrg,
+            .satBrFiyatVrg,
+            .topFiyatVrg,
+            .netFiyatVrg{
+                display: inline-block !important;
+            }
+            .gridSepetListe_gercekFiyat {
+                position: relative;
+                display: block;
+                color: #8F8F8F;
+                &:after{
+                    content:'';
+                    display: block;
+                    position: absolute;
+                    width: 90%;
+                    height: 1px;
+                    background: #8F8F8F;
+                    top: 49.5%;
+                    left: 5%;
+                }
+            }
+        }
+        .ems-grid-price-total > span > span {
+            display: block;
+            position: relative;
+        }
+        
+    }
+}
+
+//grid types
+//td ilk ve sonda border var
+.ems-grid-address {
+    margin-bottom: 20px;
+    .ems-grid-row {
+        width: 100%;
+        border: 1px solid #eaeaea;
+        padding: 20px;
+        display: table;
+        vertical-align: middle;
+        margin-bottom: 30px;
+        position: relative;
+        > div {
+            border-right-width: 0;
+            border-bottom-width: 1px;
+            &:last-child {
+                border-right-width: 1px;
+            }
+        }
+        .col-1{
+            display: table-cell;
+            vertical-align: middle;
+            width: 77%;
+            .ems-address-name{
+                font-family: $fontDefault;
+                font-size: 15px;
+                font-weight: 600;
+                color: $black;
+                margin-bottom: 7px;
+            }
+            .type{
+                display: none;
+            }
+            .ems-address{
+                font-family: $fontDefault;
+                font-size: 15px;
+                color: #a0a0a0;
+                line-height: 18px;
+                font-weight: 500;
+                br{
+                    display: none;
+                }
+            }
+        }
+        .col-2{
+            display: table-cell;
+            vertical-align: middle;
+            width: 33%;
+            text-align: right;
+        }
+    }
+    @media screen and (max-width:$deviceMobile){
+        .ems-grid-row{
+            display: block;
+            margin-bottom: 20px;
+            > .col-1{
+                display: block;
+                padding: 0;
+                width: 100%;
+                .ems-address-name{
+                    padding-right: 70px;
+                    margin-bottom: 15px;
+                }
+            }
+            > .col-2{
+                position: absolute;
+                right: 14px;
+                top: 14px;
+                padding: 0;
+                width: auto;
+                .item-1{
+                    a{
+                        min-width: 30px;
+                        height: 30px;
+                        line-height: 30px;
+                        + a{
+                            margin-left: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//full icerik ortala
+.ems-grid-favorites, .ems-grid-refund, .ems-page-member-follow-list .ems-grid-default, .ems-grid-order, .ems-grid-order-products, .ems-grid-message {
+    > div > div {
+        text-align: center;
+    }
+}
+//urun gorsel boyut
+.ems-grid-favorites, .ems-grid-refund, .ems-page-member-follow-list .ems-grid-default, .ems-grid-order-products {
+    .ems-grid-row > div {
+        &.ems-grid-img img {
+            width: 90px;
+            margin: 0 auto;
+        }
+    }
+}
+//adet input
+.ems-page-member-favorites{
+    .favorite-report{
+        .select-cfg{
+            display: none;
+        }
+    }
+}
+.ems-follow-tab{
+    .content-js{
+        > li{
+            .content{
+                padding: 0;
+            }
+        }
+    }
+}
+.ems-grid-follow-stock,
+.ems-grid-favorites {
+    .ems-grid-header{
+        display: none !important;
+    }
+    .ems-grid-row {
+        border-top: 1px solid #eaeaea;
+        border-bottom: none;
+        border-left: none;
+        border-right: none;
+        &:last-child{border-bottom: 1px solid #eaeaea;}
+        .ems-grid-pieces,
+        .ems-grid-select{
+            display: none;
+        }
+        .ems-grid-name{
+            width: 40%;
+            text-align: left;
+            padding: 0 5px 0 10px;
+        }
+        .ems-grid-cartto{
+            width: 33%;
+        }
+        .ems-grid-remove{
+            width: 7%;
+           
+        }
+        .ems-grid-img{width: 10%;}
+        .ems-grid-price{
+            width: 15%;
+            padding: 0 5px;
+        }
+    }
+    @media screen and (max-width:$deviceMobile){
+        .ems-grid-row{
+            padding: 20px 55px 20px 105px;
+            min-height: 125px;
+            > div:not(.ems-grid-img):not(.ems-grid-remove):not(.ems-grid-select):not(.ems-grid-pieces){
+                width: 100% !important;
+                display: block !important;
+                text-align: left;
+            }
+            > .ems-grid-select{
+                display: none !important;
+            }
+            > .ems-grid-img{
+                position: absolute;
+                width: 85px;
+                height: auto;
+                left: 10px;
+                top: 20px;
+                padding: 0;
+            }
+            > .ems-grid-remove{
+                position: absolute;
+                top: 50%;
+                right: 20px;
+                margin-top: -25px;
+                padding: 0;
+            }
+            > .ems-grid-name{
+                font-weight: 600;
+                font-size: 15px;
+                letter-spacing: 0.3px;
+                margin-bottom: 10px;
+                min-height: 54px;
+                padding: 0;
+            }
+            > .ems-grid-price{
+                padding: 0;
+                [id$='lbfURN_KDVDAHIL']{
+                    display: none !important;
+                }
+            }
+            > .ems-grid-cartto{
+                padding: 0;
+                margin-top: 20px;
+                margin-left: 17px;
+                > a{
+                    min-width: 150px;
+                }
+            }
+        }
+    }
+}
+
+//grid custom
+//sepet
+.ems-grid-cart {
+    & > .ems-grid-header{
+        display: none !important;
+    }
+    & > .ems-grid-row{
+        .ems-grid-delete,
+        .ems-grid-img{display: none;}
+        .ems-grid-name{width: 45%;}
+        .ems-grid-price,
+        .ems-grid-price-total{width: 18%;}
+        .ems-grid-piece {width: 19%;}
+    }
+    
+    .ems-grid-row {
+        padding: 20px 90px 20px 140px;
+        position: relative;
+        border-left: none;
+        border-right: none;
+        br{
+            display: none;
+        }
+        > div {
+            float:left;
+            display: table;
+            height: 100px;
+            padding: 0;
+                & > span{
+                    display: table-cell;
+                    vertical-align: middle;
+                    height: 100px;
+                    padding: 0 30px;
+                }
+        }
+        .ems-grid-img {
+            display: block;
+            text-align: center;
+            position: absolute;
+            left: 40px;
+            top: 20px;
+            a, img {
+                margin:0 auto;
+                width: auto;
+                max-height: 100px;
+            }
+        }
+        .ems-grid-fav{
+            display: none !important;
+        }
+        .ems-grid-name {
+                br{
+                    display: none;
+                }
+                a {
+                    span{
+                        font-size: 15px;
+                        letter-spacing: 0.3px;
+                        line-height: 20px;
+                        color:$black;
+                        font-weight: 600;
+                        display: block;
+                    }
+                }
+                [id$="lblProm"]{
+                    display: block;
+                    width: 100%;
+                        ul{
+                            display: block;
+                            width: 100%;
+                                & > li{
+                                    display: block;
+                                    width: 100%;
+                                        span.prom_ad{
+                                            color: #dd0d63;
+                                            font-size: 14px;
+                                            font-family: $fontDefault;
+                                            margin-top: 5px;
+                                        }
+                                        span.prom_indtutar{
+                                            display: none;
+                                        }
+                                }
+                        }
+                }
+                .urunKategori{
+                    display: none;
+                }
+                span:empty{
+                    display: none;
+                }
+        }
+        .ems-grid-price,
+        .ems-grid-price-total {
+        }
+        .ems-grid-piece {
+         
+        }
+        .ems-grid-delete{
+            display: block;
+            position: absolute;
+            right: 40px;
+            top: 20px;
+        }
+    }
+    @media screen and (max-width:$deviceMobile){
+        .ems-grid-row{
+            display: inline-block;
+            vertical-align: top;
+            width: 100%;
+            padding: 20px 50px 20px 105px;
+            > div{
+                display: inline-block;
+                vertical-align: top;
+                height: auto;
+                > span{
+                    display: inline;
+                    padding: 0;
+                    height: auto;
+                }
+            }
+            .ems-grid-img{
+                left: 10px;
+                top: 20px;
+                img{
+                    max-height: 85px;
+                }
+            }
+            .ems-grid-name{
+                width: 100%;
+                padding: 0;
+                font-size: 15px;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+            .ems-grid-price{
+                display: none;
+            }
+            .ems-grid-price-total{
+                width: calc(100% - 80px);
+                text-align: left;
+                > span{
+                    height: 45px;
+                    display: table;
+                    vertical-align: middle;
+                    > span{
+                        display: table-cell;
+                        vertical-align: middle;
+                    }
+                }
+            }
+            .ems-grid-piece{
+                width: 80px;
+                text-align: left;
+                input{
+                    width: 100%;
+                    max-width: 62px;
+                    border-radius: 5px;
+                }
+            }
+            .ems-grid-delete{
+                right: 16px;
+                top: 50%;
+                margin-top: -10px;
+            }
+        }
+    }
+}
+.ems-grid-order{
+    .ems-grid-row{
+        .ems-grid-order-no{
+            a{
+                font-weight: 600;
+                text-decoration: underline;
+            }            
+        }
+        .ems-grid-add-to-cart{
+            > a{
+                padding-left: 5px;
+                padding-right: 5px;
+                min-width: 140px;
+            }
+        }
+    }
+    @media screen and (max-width:$deviceMobile){
+        > div{
+            border-top: 1px solid #979797 !important;
+            border-left: 1px solid #979797 !important;
+            display: inline-block !important;
+            border-bottom: none;
+            vertical-align: top;
+            width: 50%;
+            padding: 0 !important;
+            margin-bottom: 25px;
+            > div{
+                display: table;
+                width: 100%;
+                height: 58px;
+                padding: 0 !important;
+                border-bottom: 1px solid #979797; 
+                > *{
+                    display: table-cell;
+                    vertical-align: middle;
+                    height: 57px;
+                }
+            }
+        }
+        .ems-grid-header{
+            background: #eeeeee;
+            border-left: 1px solid #979797;
+        }
+        .ems-grid-row{
+            border-right: 1px solid #979797;
+        }
+    }
+}
+//stok
+.gridSepetStok {
+    margin: 30px 0;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    th, td {
+        border: 1px solid #eee;
+        text-align: center;
+        padding: 10px 5px;
+        &:nth-child(2) {
+            display: none;
+        }
+    }
+}
+
+//mesajlarım
+.ems-grid-message {
+    .ems-grid-row > div {
+        a {
+            display: none;
+        }
+        a.emos_invisible {
+            display: inline-block !important;
+        }
+    }
+}
+
+//sifremi unuttum
+.tableSifremiUnuttum {
+    width: 100%;
+    & > tbody,
+    & > tbody > tr {
+            display: block;
+            width: 100%;
+                th{
+                    width: 100%;
+                    display: block;
+                    text-align: left;
+                        & > span{
+                            font-family: "proximaRegular";
+                            line-height: 15px;
+                            font-size: 12px;
+                            color: #c9c9c9;
+                            font-weight: normal;
+                        }
+                }
+                td{
+                    display: block;
+                    width: 100%;
+                        [id$="lbfUYE_KONTROLKODU"]{
+                             font-family: "proximaRegular";
+                            line-height: 15px;
+                            font-size: 12px;
+                            color: #c9c9c9;
+                            font-weight: normal;
+                        }
+                        input{
+                            margin-top: 0;
+                            max-width: 420px;
+                        }
+                        a.btnUyeSifreGonder {
+                            max-width: 400px;
+                        }
+                        a.btnUyeSifreGonder {
+                            width: 100%;
+                            margin-top: 10px;
+                        }
+                        &.tableSifremiUnuttum_tdCaptchaImage1 {
+                            padding: 10px 0;
+                            position: relative;
+                                img{
+                                    margin-bottom: 15px;
+                                }
+                                .captchaYenile {
+                                    position: absolute;
+                                    left: 0;
+                                    display: block;
+                                    color: #E91E63;
+                                    font-size: 20px;
+                                    bottom: 17px;
+                                }
+                                input{
+                                    padding-left: 30px;
+                                }
+                        }
+                }
+     }
+}
+
+//siparis-detay
+.ems-grid-order-products {
+    .ems-grid-row .ems-grid-price-total {
+        text-align: center;
+    }
+}
+.ems-page-member-message{
+    .page-top-desc,
+    .page-top-title{display: none;}
+}
+
+ .remove-list,
+ .ems-liste-remove{
+     display: inline-block;
+     vertical-align: top;
+     width: 100%;
+     text-align: right;
+ }
+ 
+
+ .large-width{
+     width: 100%;
+     max-width: 425px;
+     margin: 0 auto;
+    
+ }
+ .xmlFormHeader{
+     display: none;
+ }
+ .xmlForm_btnGonder{
+    max-width: 425px;
+    margin: 0 auto;
+}
+.xmlFormError {
+    display: block;
+    width: 100%;
+    max-width: 425px;
+    background: green;
+    color: #fff;
+    padding: 5px;
+    margin: 10px auto;
+    &:empty{display: none;}
+}

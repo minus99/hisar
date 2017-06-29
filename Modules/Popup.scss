@@ -1,0 +1,24 @@
+.minPpWrp{
+    .btnMinPpCl{
+        background: none;
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        font-size: 18px;
+        &:before{
+            content:$icon-close;
+            @extend .icon;
+            color: $darkBlue;
+        }
+    }
+    .minPp{
+        &.popup_stokHaberci{
+            .minPpBdy{
+                min-height: 410px;
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,471 @@
+.services-list-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 550px;
+    background-size: cover;
+
+    h1 {
+        margin: 0px;
+        font-size: 40px;
+        color: $white;
+        letter-spacing: 1px;
+    }
+}
+.ems-service-list{
+    .divServisListe_ServisTur,
+    .divServisListe_UlkeSehirSemt {display: none;}
+    .pServisListe {line-height: 1.4;}
+    .sStylerMainWrp.sStylerWrp_select {
+        position: relative;
+        width: 100%;
+        display: inline-block;
+        border-bottom: 2px solid #979797;
+        .sStylerWrp {
+            height: 40px !important; 
+        }
+    }
+    .sStylerMainWrp select {
+        position: absolute; 
+        left: 0;
+        top: 0px;
+        width: 100% !important;
+        height: 100%;
+        margin: 0px;
+        cursor: pointer;
+        border: 1px solid #979797;
+    }
+    .select .ems-form-obj:after {
+        top: calc(50% - 5px);
+    }
+    .mod-service-list-header { 
+        margin-bottom:40px;
+        span[id$='lbfKUTU_YETKILISERVISLER'] {
+            font-size:15px;
+            margin: 34px 0px;
+            display: block;
+            text-align: center;
+            h1{
+                margin: 0 0 0 0;
+                /*font-family:$fB;*/
+                font-size: 20px;
+                text-align: left;
+                color: $colorDefault;
+                display: none;
+            }
+            a {
+                text-decoration: underline;
+                color: $pink;
+            }
+        } 
+        .ems-form {
+            max-width: none;
+            &-inner {
+                width:100%;
+                max-width: none;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                .ems-field select {
+                    font-size:14px;
+                }
+                .ems-field {
+                    display:table-cell;
+                    vertical-align: middle;
+                    width: calc((100% / 3) - 20px);
+                    max-width: none;
+                    margin-bottom: 35px; 
+                    .ems-form-label, input {display:none;}
+                    .ems-form-obj {
+                        a {
+                            width:100%; span { font-size:14px; }
+                        }
+                    }
+                    .sStylerMainWrp.sStylerWrp_select {
+                        .sStylerWrp{
+                            padding-top:15px;
+                            height:50px;
+                            line-height: 20px;
+                            text-transform:uppercase;
+                            &:after{ margin-top: -7px; }
+                        }
+                    }
+                    &::before {
+                        font-size: 13px;
+                        line-height: 1.69;
+                        text-align: left;
+                        color: #989898;
+                    }
+                    .btnSrvArama {
+                        background-color: $pink;
+                        max-width: 210px;
+                    }
+                }
+                > div {width:25%;}
+            }
+            .country {display: none;}
+            
+            .stores {
+                &::before {content: 'Servis Türü';}
+            }
+            .city {
+                &::before {content: 'Şehir';}
+            }
+            .district {
+                &::before {content: 'İlçe';}
+            }
+            .button {
+                text-align: center;
+                margin-bottom: 0px;
+                span {
+                    color: $white;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    .mod-service-list-body {
+        .service-list {
+            .pServisListe {
+                    font-size:15px;
+                    width:100%;
+                    display:inline-block;
+                .distance-service  {display:none;}
+                .divServisListe_FirmaAdi {
+                    padding-bottom: 10px;
+                    font-size:15px;
+                    color: $pink;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                }
+                .divServisListe_Telefon a span:before {
+                    content: "Telefon: ";
+                }
+                .divServisListe_Koordinat {
+                    margin-top:20px; 
+                    a {
+                        display: flex;
+                        align-items: center;
+                        &:before {
+                                content:'';
+                                width: 13px;
+                                height: 19px;
+                                display: inline-block;
+                                background-image: url(#{$baseHref + "/images/frontend/marker.svg"});
+                                background-size: cover;
+                                margin-right: 10px;
+                            }
+                        span {
+                        font-weight: bold;
+                            span.gs1 {display:inline-block;}
+                            span.gs2 {display:none;}
+                        }
+                    }
+                }
+                &.selected {
+                    .divServisListe_Koordinat {
+                        a:before {
+                            @include setTransform(rotate(90deg));
+                        }
+                        span {
+                            span.gs1 {display:none;}
+                            span.gs2 {display:inline-block;}
+                        }
+                    }
+                }
+            }
+
+            .address-detail {
+                display:inline-block;
+                width:100%;
+                max-width: 860px;
+                height: 0;
+                overflow: hidden;
+                @include transition(height 222ms ease-in-out); 
+                &-inner {
+                    .back-btn {display:none;} 
+                    .left-column {
+                        width: 40%;
+                        float:left;
+                        .title {
+                            /*background:$lBlue;*/
+                            font-size:18px;
+                            padding:10px 20px;
+                            text-align: center;
+                            /*font-family: $fB;*/
+                            color: #fff;
+                            max-height: 75px;
+                            line-height: 1.1;
+                            span {display: block;}
+                        }
+                        .detail {display:none;}
+                        .work-table {
+                            > span {display:none;}
+                                table {
+                                    border-collapse: collapse;
+                                    width:100%;
+                                    height: 376px;
+                                    text-align: center;
+                                    tr {
+                                        th {
+                                            width:188px;
+                                            border: 1px solid $borderColor;
+                                            /*font-family:$fD;*/
+                                            font-size: 16px;
+                                            color:#000;
+                                            border-bottom: 0;
+                                            border-top: 0;
+                                        }
+                                        td {
+                                            width:135px;
+                                            background: #e9f2f5;
+                                            border: 1px solid $borderColor;
+                                            font-size: 16px; 
+                                            color:#000;
+                                            /*font-family: $fD;*/
+                                        }
+                                    }
+                                    tr:last-child {
+                                        th, td {border-bottom:1px solid $borderColor;}
+                                    }
+                                }
+                            }
+                    }
+                    .right-column {
+                        width: 60%;
+                        float: right;
+                    }
+                }
+                .map{ width: 100%; height:440px; }
+            }
+            .address-detail.opened{
+                height: 440px;
+                margin-bottom: 40px;
+            }
+        }
+        .servisIcerik {
+            .servis_bilgi {display:none;}
+                .service-list-group {
+                    width:100%;
+                    display:flex;
+                    justify-content: space-between;
+                    margin-bottom: 60px;
+                    margin-left: -20px;
+                    .pServisListe {
+                        width: calc((100% / 3));
+                        padding-left: 20px;
+                        border-left: 1px solid #d4d4d4;
+                        &:first-child {
+                            border-left: none;
+                        }
+                    .divServisListe_Email {
+                        display:none; 
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:$breakpointSM) {
+    .ems-service-list {
+        .row-1 { display:none !important; }
+        .mod-service-list { 
+                &-header {
+                    .ems-form{
+                        .ems-form-inner {
+                            display:block;
+                            .ems-field {
+                                display: block;
+                                padding-right: 0;
+                                a{
+                                    padding-top:19px;
+                                    padding-bottom:18px;
+                                    span{ font-size:18px; }
+                                }
+                                .sStylerMainWrp.sStylerWrp_select{
+                                    .sStylerWrp{
+                                        height:60px;
+                                        line-height:30px; 
+                                    }
+                                }
+                            }
+                            > div {
+                                width:100%;
+                            }
+                        }
+                        .ems-form-obj{ max-width: 100%; }
+                    }
+                    span[id$='lbfKUTU_YETKILISERVISLER'] { 
+                        display: none;
+                    }
+                }
+            
+            .mod-service-list-body {
+                .servisIcerik {
+                        .pServisListe {
+                            display:inline-block; 
+                            width: 100%; 
+                            padding: 0; 
+                            border-bottom:1px solid $borderColor !important;
+                            margin-bottom: 50px;
+                            padding-bottom: 50px !important;
+                                &:first-child {
+                                    border: 0;
+                                    padding: 0;
+                                }
+                                div {
+                                    float:none !important;
+                                    max-width:none !important;
+                                    word-break: break-word;
+                                }
+                            }
+
+                    }
+                    .address-detail {display:none;}
+                }
+
+                &.show-address-detail {
+                    .service-list-group {display:none !important;}
+                    .address-detail {
+                        &.opened {
+                            position:fixed;
+                            width:100%;
+                            height: 100%;
+                            z-index: 500;
+                            display:block;
+                            top: 0;
+                            left: 0;
+                            overflow-y: auto;
+                            padding-bottom: 100px;
+                            background: #fff;
+                                .address-detail-inner {
+                                .back-btn {
+                                    display: block;
+                                    width: 100%;
+                                    background: #fff;
+                                        a {
+                                            font-size: 15px;
+                                            padding: 20px;
+                                            display: inline-block;
+                                            i{
+                                                vertical-align: middle;
+                                                display: inline-block;
+                                                    &:before {
+                                                    content: '\e917';
+                                                    font-family: 'icomoon';
+                                                    /*color: $lBlue;*/
+                                                    font-size:25px; 
+                                                    margin-right:20px;
+                                                }
+                                            }
+                                        }      
+                                    }
+                                .left-column {
+                                    width:100%;
+                                    .detail {
+                                        display:block;
+                                        font-size: 18px;
+                                        padding: 0 30px;
+                                        .distance-service, .divServisListe_Koordinat {display:none;}
+                                        .divServisListe_FirmaAdi {font-size:20px; color: $pink; margin: 20px 0;}
+                                        .divServisListe_Adres, .divServisListe_UlkeSehirSemt{
+                                            font-size:15px;
+                                            /*color:$sText;*/
+                                        }
+                                        .divServisListe_Telefon {
+                                            padding: 15px 20px; 
+                                            /*background: $lBlue;*/
+                                            position:fixed;
+                                            bottom:0;
+                                            font-size: 18px;
+                                            color: #fff;
+                                            width: 100%;
+                                            left: 0;
+                                            text-align: center;
+                                            display: none;
+                                                span {
+                                                    display: inline-block;
+                                                    &:after {
+                                                        content: "\e90c";
+                                                        font-family: 'icomoon';
+                                                        font-size: 27px;
+                                                        margin-left: 27px;
+                                                        position: relative;
+                                                        top: 3px;
+                                                    }
+                                                    &:before {
+                                                        content: "ARA";
+                                                        float: right;
+                                                        font-size: 17px;
+                                                        /*font-family: $fD;*/
+                                                        margin-left: 25px;
+                                                        position: relative;
+                                                        top: 5px;
+                                                    }
+                                                }
+                                            }
+                                        .tableServisCalismaSaatleri {
+                                            display: block !important;
+                                            margin-top:40px;
+                                            table {
+                                                    border-collapse: collapse;
+                                                    width:100%;
+                                                    height: 367px;
+                                                    text-align: center;
+                                                    tr {
+                                                        th {
+                                                            width:188px;
+                                                            border: 1px solid $borderColor;
+                                                            /*font-family:$fD;*/
+                                                            font-size: 16px;
+                                                            /*color:$lBlue;*/
+                                                            border-bottom: 0;
+                                                            border-top: 0;
+                                                        }
+                                                        td {
+                                                            width:135px;
+                                                            background: #f0f3f5;
+                                                            border: 1px solid $borderColor;
+                                                            font-size: 16px;
+                                                            /*color:$lBlue;*/
+                                                            /*font-family: $fD;*/
+                                                        }
+                                                    }
+                                                    tr:last-child {
+                                                        th {border-bottom:1px solid $borderColor;}
+                                                    }
+                                                    tr:first-child {border-top:1px solid $borderColor;} 
+                                                }
+                                                .service-work-hours {
+                                                    /*background: $lBlue;*/
+                                                    font-size: 18px;
+                                                    letter-spacing: 0.6px;
+                                                    padding: 15px;
+                                                    text-align: center;
+                                                    /*font-family: $fD;*/
+                                                    color: #fff;
+                                                    max-height: 76px;
+                                                    display: inline-block;
+                                                    width: 100%;
+                                                }
+                                            }
+                                        }
+                                    .work-table, .title {display:none;}
+                                    .work-table > span {display:block;}
+                                }
+                                .right-column {
+                                    width:100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    }
+    .address-detail-show {
+    .site-content {position: fixed; width:100%; height:100%; top:0; z-index:50;}
+    }
+}

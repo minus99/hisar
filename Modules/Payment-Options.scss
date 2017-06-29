@@ -1,0 +1,70 @@
+.pageSiparisSonuc {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    margin: 70px auto;
+    display: block;
+    .pageDescDefault {
+        display: block;
+        text-align: center;
+        br {
+            display: none !important;
+        }
+    }
+    .pageHeaderSiparisSonuc {
+        display: none;
+    }
+    &Header{
+        display:block;
+        width:100%;
+        text-align:center;
+        margin-bottom: 10px;
+        .sip-icon {
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+            text-align: center;
+            .icon {
+                font-size: 23px !important;
+                width: 58px;
+                display: inline-block;
+                height: 58px;
+                text-align: center;
+                line-height: 2.3;
+                border-width: 3px;
+                border-color: #000;
+            }
+        }
+        .text {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+    }
+    .pageSiparisSonuc_btnSiparisSonuc {
+        text-align: center;
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        > div{
+            display: inline-block;
+            vertical-align: top;
+            &:last-child{
+                margin-left: 20px;
+            }
+        }
+    }
+    .pageDescSiparisSonucHavale,
+    span[id$="lblSIP_BASARILI"]{
+        font-size: 15px;
+        line-height: 20px;
+        color: $black;
+        br{
+            display: block !important;
+            width: 100%;
+        }
+        b{
+            text-transform: uppercase;
+        }
+    }
+}

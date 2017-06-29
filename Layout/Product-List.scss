@@ -1,0 +1,1138 @@
+.ems-page-product-list{
+    .collection-product-wrapper{display: none;}
+    .category-header{
+        position: relative;
+        width: 100%;
+        height: auto;
+        img{
+            width: 100%;
+        }
+        > .text-wrap{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            @include setTransform(translate(-50%, -50%));
+            h1{
+                color: $white;
+                font-size: 40px;
+                line-height: 45px;
+                letter-spacing: 0.4px;
+                margin: 0; 
+            }
+            .total-product-number{
+                display: none;
+            }
+        }
+        @media screen and (max-width:$deviceMobile){
+            > .text-wrap{
+                width: 100%;
+                padding: 0 15px;
+                text-align: center;
+                h1{
+                    font-size: 25px;
+                    line-height: 28px;
+                    letter-spacing: 0.3px;
+                }
+                .total-product-number{
+                    display: inline-block;
+                    font-size: 13px;
+                    line-height: 15px;
+                    color: $white;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+.ems-prd-list{
+    &-header{
+        position: relative;
+        width: 100%;
+        padding: 20px 0;
+        border-bottom: 1px solid #f4f4f4;
+        display: inline-block;
+        vertical-align: top;
+        margin-bottom: 20px;
+        > div{
+            display: inline-block;
+            vertical-align: top;
+            &.col-1{
+                width: 70%;
+            }
+            &.col-2{
+                width: 30%;
+                .urunListePagingUst{
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 100%;
+                    table,
+                    table tbody,
+                    table tbody tr{
+                        display: block;
+                        width: 100%;
+                        td{
+                            display: inline-block;
+                            vertical-align: top;
+                            width: 100% !important;
+                            &:nth-child(1),
+                            &:nth-child(2){
+                                display: none;
+                            }
+                            .urunPaging_paging{      
+                                select{
+                                    display: none;
+                                }
+                                > div{
+                                    font-size: 12px;
+                                    line-height: 18px;
+                                    letter-spacing: 0.1px;
+                                    color: $black;
+                                    font-weight: 500;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (max-width:$deviceMobile){
+            padding: 5px 10px;
+            .col-1{
+                display: block;
+            }
+            .col-2{
+                display: none;
+            }
+            &-inner{
+                width: 100%;
+                position: relative;
+                &:after{
+                    content:'';
+                    width: 1px;
+                    height: 30px;
+                    background: #e9e9e9;
+                    display: block;
+                    position: absolute;
+                    left: 50%;
+                    margin-left: -0.5px;
+                    top: 10px;
+                }
+                > a{
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 50%;
+                    text-align: center;
+                    font-size: 15px;
+                    font-weight: 700;
+                    letter-spacing: 0.2px;
+                    padding: 16px 5px;
+                }
+            }
+        }
+    }
+    &-sort{
+        > .lvl1{
+            display: inline-block;
+            vertical-align: top;
+            width: 100%;
+            & > li{
+                float: left;
+                margin-right: 30px;
+                &:last-child{
+                    margin-right: 0;
+                }
+                a{
+                    display: inline-block;
+                    vertical-align: top;
+                    padding:0 5px;
+                    line-height: 18px;
+                    font-size: 12px;
+                    letter-spacing: 0.1px;
+                    color: $black;
+                    font-family: $fontDefault;
+                    font-weight: 500;
+                }
+                &.selected{
+                    a{
+                        font-weight: 700;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+    .ems-prd-list-paging-bottom{
+        border-top: 1px solid #f4f4f4;
+        table,
+        table tbody,
+        table tbody tr{
+            display: block;
+            width: 100%;
+            td{
+                display: inline-block;
+                vertical-align: top;
+                width: 100% !important;
+                text-align: left;
+                padding: 20px 0;
+                .tumunuGoster{
+                    display: block !important;
+                    float: right;
+                    font-size: 12px;
+                    line-height: 18px;
+                    letter-spacing: 0.1px;
+                    color: #9d9d9d;
+                    font-family: $fontDefault;
+                    @media screen and (max-width:$deviceMobile){
+                        display: none !important;
+                    }
+                }
+                .urunPaging_pageNavigation{
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 100%;
+                    > .paging{
+                        display: none;
+                    }
+                    > span{
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 50%;
+                        > *{
+                            text-align: center;
+                            font-size: 12px;
+                            line-height: 18px;
+                            letter-spacing: 0.1px;
+                            color: #9d9d9d;
+                            font-family: $fontDefault;
+                            max-width: 20px;
+                            padding: 2px 5px;
+                            margin-right: 25px;
+                        }
+                        > span{
+                            color: $black;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                &:last-child,
+                &:first-child{
+                    display: none !important;
+                }
+                @media screen and (max-width:$deviceMobile){
+                    border-bottom: 1px solid #f4f4f4;
+                    margin-bottom: 20px;
+                    > .urunPaging_pageNavigation{
+                        width: 100%;
+                        text-align: center;
+                        > span{
+                            width: 100%;
+                            > *{
+                                padding: 23px 5px;
+                                margin: 0 13px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .product-list-style,
+    .emosInfinite{
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        position: relative;
+        > li{
+            display: inline-block;
+            vertical-align: top;
+            width: 31.33333333333333%;
+            margin-right: 3%;
+            margin-bottom: 3%;
+            &:nth-child(3n+3){
+                margin-right: 0;
+            }
+            @media screen and (max-width:680px){
+                width: 49%;
+                margin-right: 2%;
+                &:nth-child(3n+3){
+                    margin-right: 2%;
+                }
+                &:nth-child(2n+2){
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    @media screen and(max-width:$deviceMobile){
+        padding: 0 10px;
+    }
+}
+.ems-prd-icons{
+    
+    > div{
+        font-size: 12px;
+        line-height: 12px;
+        font-family: $fontDefault;
+        font-weight: 600;
+        display: none;
+        
+    }
+    @at-root .indirimli{
+        .prd-icon-discount,
+        .urunListe_pnlIndirimOran{
+            display: block !important;
+            color: $pink;
+        }
+        
+    }
+    @at-root .yeniUrun{
+        .prd-icon-new,
+        .urunListe_yeniUrun{
+            display: block !important;
+        }
+    }
+}
+.product-list-style,
+.emosInfinite{
+    width: 100%;
+    position: relative;
+    > li{
+        .ems-prd-inner{
+            position: relative;
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 1px solid #f4f4f4;
+            .ems-prd{
+                &-icons{
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 1;
+                    margin: 5px;
+                    > div{
+                        padding: 5px !important;
+                        background: #fff;
+                        &.urunListe_yeniUrun{
+                            background: #ed3058;
+                            color: #fff;
+                        }
+                    }
+                }
+                &-code{
+                    display: none;
+                }
+                &-image{
+                    position: relative;
+                    width: 100%;
+                    a{
+                        display: block;
+                        font-size: 0;
+                        img{
+                            width: 100%;
+                            height: auto;
+                            font-size: 0;
+                        }
+                    }
+                }
+                &-textwrap{
+                    position: relative;
+                    width: 100%;
+                    background: #f4f4f4;
+                    padding: 15px 20px 0 20px;
+                    height: 120px;
+                }
+                &-name{
+                    height: 60px;
+                    margin-bottom: 10px;
+                    a{
+                        color: $black;
+                        font-size: 15px;
+                        letter-spacing: 0.3px;
+                        font-weight: 600;
+                    }
+                }
+                &-price{
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 100%;
+                    font-size: 18px;
+                    letter-spacing: 0.4px;
+                    font-weight: 700;
+                    > div{
+                        display: inline-block;
+                        vertical-align: top;
+                        margin-right: 10px;
+                        > div{
+                            > span{
+                                display: inline-block !important;
+                                vertical-align: baseline;
+                                font-size: 12px;
+                                letter-spacing: 0.2px;
+                                &.pb1{
+                                    margin-left: 3px;
+                                }
+                            }
+                        }
+                        &.ems-prd-price-first{
+                            color: #d2d2d2;
+                            font-family: $fontDefault;
+                            font-weight: 700;
+                            font-size: 18px;
+                            letter-spacing: 0.4px;
+                            &:empty{
+                                display: none !important;
+                            }
+                            > div{
+                                position: relative;
+                                &:after{
+                                    content:'';
+                                    display: block;
+                                    width: 100%;
+                                    height: 1px;
+                                    background: #d2d2d2;
+                                    position: absolute;
+                                    left: 50%;
+                                    top: 50%;
+                                    @include setTransform(translate(-50%,-50%));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.filter-wrapper{
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 53px 0;
+    .pnlUrunKiyasSecim{
+        display: none;
+    }
+    .kutuOzellikFiltre{
+        .kutuHeaderOzellikFiltre{
+            display: none;
+        }
+        .kutuBodyOzellikFiltre{
+            display: inline-block;
+            width: 100%;
+            vertical-align: top;
+            > table,
+            > table > tbody,
+            > table > tbody > tr,
+            > table > tbody > tr > td{
+                display: block;
+                width: 100%;
+            }
+            #dvUrunKiyaslamaOzellik{
+                border-bottom: 1px solid #f4f4f4;
+                .urunKiyaslamaOzellik_ozellikAd{
+                    font-family: $fontDefault;
+                    font-size: 20px;
+                    line-height: 22px;
+                    letter-spacing: 0.2px;
+                    color: $black;
+                    font-weight: 600;
+                    padding: 20px 10px 20px 36px;
+                    display: block;
+                    position: relative;
+                    cursor: pointer;
+                    &:before{
+                        content: $icon-caret-right;
+                        @extend .icon;
+                        font-size: 10px;
+                        top: 50%;
+                        position: absolute;
+                        left: 12px;
+                        @include transition(all 0.2s ease-in-out);
+                        @include setTransform(translateY(-50%) rotate(90deg));
+                    }
+                    &.kapali{
+                        &:before{
+                            @include setTransform(translateY(-50%) rotate(0deg));
+                        }
+                    }
+                }
+                .urunKiyaslamaOzellik_temizle,
+                .filter-selection-name{
+                    display: none;
+                }
+                .urunKiyaslamaOzellik_ozellikIcerik{
+                    padding: 5px 0 14px 55px;
+                    > table,
+                    > table > tbody,
+                    > table > tbody > tr,
+                    > table > tbody > tr > td{
+                        display: block;
+                        width: 100%;
+                    }
+                    a{
+                        position: relative;
+                        display: inline-block;
+                        color: #9d9d9d;
+                        font-size: 15px;
+                        line-height: 1;
+                        padding: 7px 0 7px 28px;
+                        &:before{
+                            content:'';
+                            display: block;
+                            width: 12px;
+                            height: 12px;
+                            background: transparent;
+                            border:1px solid $lightGrey;
+                            position: absolute;
+                            left: 0;
+                            top: 7px;
+                        }
+                        &.link_selected{
+                            &:before{
+                                background: $pink;
+                                border-color: transparent;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.kutuKategori{
+    border-bottom: 1px solid #f4f4f4;
+    .kutuHeaderDefault {
+        display: none;
+    }
+    .menuKategori{
+        > li{
+            > a{
+                font-family: $fontDefault;
+                font-size: 20px;
+                line-height: 22px;
+                letter-spacing: 0.2px;
+                color: $black;
+                font-weight: 600;
+                padding: 20px 10px 20px 36px;
+                display: block;
+                position: relative;
+                &:before{
+                    content: $icon-caret-right;
+                    @extend .icon;
+                    font-size: 10px;
+                    top: 50%;
+                    position: absolute;
+                    left: 12px;
+                    @include setTransform(translateY(-50%) rotate(90deg));
+                }
+                
+            }
+            > ul{
+                padding: 5px 0 14px 55px;
+                > li{
+                    > a{
+                        color: #9d9d9d;
+                        font-size: 15px;
+                        line-height: 1;
+                        padding: 7px 0;
+                        display: inline-block;
+                        position: relative;
+                        &:before{
+                            content: $icon-caret-right;
+                            @extend .icon;
+                            font-size: 6px;
+                            top: 50%;
+                            position: absolute;
+                            left: -10px;
+                            @include transition(all 0.2s ease-in-out);
+                            @include setTransform(translateY(-50%));
+                        }
+                        &.active{
+                            font-weight: 600;
+                            
+                        }
+                    }
+                    > ul{
+                        max-height: 0;
+                        overflow: hidden;
+                        padding: 0 0 0 20px;
+                        @include transition(all 0.2s ease-in-out);
+                        > li{
+                            > a{
+                                color: $black;
+                                font-size: 15px;
+                                line-height: 1.1;
+                                letter-spacing: 0.3px;
+                                display: inline-block;
+                                vertical-align: top;
+                                padding: 7px 0;
+                                &.active{
+                                    font-weight: 700;
+                                }
+                            }
+                            > ul{
+                                max-height: 0;
+                                overflow: hidden;
+                                padding: 0 0 0 20px;
+                                @include transition(all 0.2s ease-in-out);
+                                > li{
+                                    > a{
+                                        padding: 5px 0;
+                                        display: inline-block;
+                                        vertical-align: top;
+                                        &.active{
+                                            font-weight: 700;
+                                        }
+                                    }
+                                }
+                            }
+                            &.opened{
+                                > ul{
+                                    padding-top: 10px;
+                                    padding-bottom: 10px;
+                                    max-height: 1500px;
+                                }
+                            }
+                        }
+                    }
+                    &.opened{
+                        > a{
+                            &:before{
+                                @include setTransform(translateY(-50%) rotate(90deg));
+                            }
+                        }
+                        > ul{
+                            padding-top: 10px;
+                            padding-bottom: 10px;
+                            max-height: 1500px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.kutuYeniUrun{
+    #ajxUrunList{
+        .category-header{
+            display: none;
+        }
+    }
+    .kutuHeaderYeniUrun{
+
+    }
+}
+.section-background-color{
+    background: #d2d2d2;
+    padding: 40px 0;
+}
+.color-background-white{
+    .collection-special-products{
+        background: #d2d2d2;
+    }
+}
+.color-background-black{
+    background: $black;
+    .collection-special-products{
+        background: #d2d2d2;
+    }
+    .site-header{
+        border-color: #3b3b3b;
+    }
+    .desktop-cart-button-wrap{
+        .desktop-cart-button{
+            *{
+                color: #fff !important;
+            }
+        }
+    }
+    .ems-prd-list .ems-prd-list-paging-bottom table td .urunPaging_pageNavigation>span>span{
+        color: #fff;
+    }
+    @media screen and (min-width:$deviceMobile){
+        .kutuArama{
+            background: #595959;
+            border-color: transparent;
+        }
+        .mod-mini-login-header>span>span,
+        .mod-mini-login-header>span>a,
+        .filter-wrapper .kutuOzellikFiltre .kutuBodyOzellikFiltre #dvUrunKiyaslamaOzellik .urunKiyaslamaOzellik_ozellikAd,
+        .kutuKategori .menuKategori>li a,
+        .site-header .right-colm .top-row .top-right-colm a,
+        .mod-mini-cart-header>.ems-cart-info>span[id$=lbfKUTU_SEPET],
+        .nav-main-wrp .lvl1>li>a:not([class*='color']){
+            color: #fff;
+        }
+        .ems-page-product-list{
+            .section-row-3{
+                background: #f4f4f4;
+            }
+            aside.left-bar{
+                background: $black;
+            }
+        }
+    }
+    @media screen and (max-width:$deviceMobile){
+        .site-header .left-colm .mobile-menu-btn>span:after,
+        .site-header .left-colm .mobile-menu-btn>span:before{
+            background: #fff;
+        }
+        .site-header .left-colm .mobile-cart-btn, .site-header .left-colm .mobile-menu-btn,
+        .collection-wrapper .collection-banner-text span.text{
+            color: #fff;
+        }   
+    }
+}
+.color-background-beige{
+    background: $beige;
+    .collection-special-products{
+        background: #fff;
+    }
+    .site-header{
+        border-color:#e9e9e9;
+    }
+    @media screen and (min-width:$deviceMobile){
+        .kutuArama{
+            background: transparent;
+            border-color: #d5d5d5;
+        }
+        .ems-page-product-list{
+            .section-row-3{
+                background: $beige;
+            }
+            aside.left-bar{
+                background: $beige;
+            }
+        }
+    }
+}
+.color-border-black{
+    .kutuKategori,
+    .filter-wrapper .kutuOzellikFiltre .kutuBodyOzellikFiltre #dvUrunKiyaslamaOzellik,
+    .collection-wrapper{
+        border-color: $black;
+    }
+}
+.color-border-purple{
+    .kutuKategori,
+    .filter-wrapper .kutuOzellikFiltre .kutuBodyOzellikFiltre #dvUrunKiyaslamaOzellik,
+    .collection-wrapper{
+        border-color: $purple;
+    }
+}
+.color-border-aqua{
+    .kutuKategori,
+    .filter-wrapper .kutuOzellikFiltre .kutuBodyOzellikFiltre #dvUrunKiyaslamaOzellik,
+    .collection-wrapper{
+        border-color: $aqua;
+    }
+}
+.color-border-orange{
+    .kutuKategori,
+    .filter-wrapper .kutuOzellikFiltre .kutuBodyOzellikFiltre #dvUrunKiyaslamaOzellik,
+    .collection-wrapper{
+        border-color: $orange;
+    }
+}
+.color-border-pink{
+    .kutuKategori,
+    .filter-wrapper .kutuOzellikFiltre .kutuBodyOzellikFiltre #dvUrunKiyaslamaOzellik,
+    .collection-wrapper{
+        border-color: $pink;
+    }
+}
+.color-border-lightPink{
+    .kutuKategori,
+    .filter-wrapper .kutuOzellikFiltre .kutuBodyOzellikFiltre #dvUrunKiyaslamaOzellik,
+    .collection-wrapper{
+        border-color: $pink2;
+    }
+}
+.collection-wrapper{
+    position: relative;
+    width: 100%;
+    border-bottom: 5px solid transparent;
+    .collection-banner{
+        position: relative;
+        width: 100%;
+        height: auto;
+        &-image{
+            width: 100%;
+            height: auto;
+            font-size: 0;
+            img{
+                width: 100%;
+            }
+        }
+        &-text{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            @include setTransform(translate(-50%,-50%));
+            text-align: center;
+            max-width: 560px;
+            width: 100%;
+            padding: 0 10px;
+            span{
+                display: block;
+                color: $white;
+                &.title{
+                    font-family: $fontSite;
+                    font-size: 40px;
+                    font-weight: 600;
+                    letter-spacing: 0.4px;
+                    margin-bottom: 20px;
+                }
+                &.text{
+                    font-size: 18px;
+                    line-height: 28px;
+                }
+            }
+        }
+    }
+    @media screen and (max-width:$deviceMobile){
+        border-bottom: none;
+        .collection-banner{
+            &-text{
+                position: static;
+                left: initial;
+                top: initial;
+                @include setTransform(none);
+                max-width: none;
+                span.title{
+                    position: absolute;
+                    top: 38%;
+                    left: 0;
+                    margin-bottom: 0;
+                    width: 100%;
+                    text-align: center;
+                    padding: 0 10px;
+                }
+                span.text{
+                    color: $black;
+                    padding: 30px 0;
+                    border-bottom: 1px solid #e9e9e9;
+                }
+            }
+        }
+    }
+}
+
+.collection-category{
+    .ems-page-product-list .section-row-3,
+    .ems-page-product-list .section-row-2,
+    .urunNavigasyon,
+    .category-header,
+    .ems-prd-list-header{
+        display: none;
+    }
+    article.content-bar{
+        margin-top: 50px;
+    }
+    .collection-product-wrapper,
+    .collection-extra-banner-wrap{
+        display: none;
+    }
+    
+    &.hisar-studio{
+        .collection-product-wrapper{
+            display: block;
+            margin: 50px 0;
+        }
+        .collection-banner{
+            .collection-banner-text{
+                @media screen and (max-width:$deviceMobile){
+                    .text{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .collection-extra-banner-wrap{
+            display: block;
+            margin: 50px 0 0 0;
+            .collection-extra-banner-list{
+                position: relative;
+                width: 100%;
+                display: inline-block;
+                vertical-align: top;
+                > li{
+                    float: left;
+                    margin-right: 4.167%;
+                    .inner{
+                        position: relative;
+                        width: 100%;
+                        height: auto;
+                        background: none !important;
+                        figcaption{
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            bottom: 0;
+                            z-index: 2;
+                            width: 100%;
+                            span.title{
+                                position: absolute;
+                                top: 40px;
+                                left: 40px;
+                                font-size: 40px;
+                                color: $white;
+                                font-family: $fontSite;
+                                max-width: 250px;
+                            }
+                            a.btn{
+                                position: absolute;
+                                left: 40px;
+                                bottom: 40px;
+                            }
+                        }
+                    }
+                    &.sizeSmall{
+                        width: 30.555333%;
+                        &:nth-child(3n+3){
+                            margin-right: 0;
+                        }
+                    }
+                    &.sizeMedium{
+                        width: 47.9165%;
+                        &:nth-child(2n+2){
+                            margin-right: 0;
+                        }
+                    }
+                    &.sizeBig{
+                        width: 100%;
+                        margin-right: 0;
+                    }
+                }
+            }
+            @media screen and (max-width:$deviceMobile){
+                margin: 0;
+                .collection-extra-banner-list{
+                    > li{
+                        margin-right: 0 !important;
+                        width: 100% !important;
+                    }
+                }
+            }
+        }
+        .collection-product-wrapper{
+            display: block;
+        }
+        aside.left-bar{
+            display: none;
+        }
+        article.content-bar{
+            padding-left: 0;
+            .ems-prd-list .emosInfinite > li{
+                width: 23.125%;
+                margin-right: 2.5%;
+                &:nth-child(3n+3){
+                    margin-right: 2.5%;
+                }
+                &:nth-child(4n+4){
+                    margin-right: 0;
+                }
+                @media screen and (max-width:$deviceMobile){
+                    width: 49% !important;
+                    margin-right: 2% !important;
+                    &:nth-child(2n+2){
+                        margin-right: 0 !important;
+                    }
+                }
+            }
+        }
+    }
+}
+.collection-special-products{
+    display: none;
+    position: relative;
+    width: 100%;
+    padding: 30px 50px 50px 50px;
+    margin-bottom: 30px;
+    & &-title{
+        text-align: center;
+        font-size: 20px;
+        line-height: 22px;
+        letter-spacing: 0.2px;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+    & &-list{
+        ul{
+            display: inline-block;
+            vertical-align: top;
+            width: 100%;
+            > li{
+                float: left;
+                width: 48%;
+                margin-right: 4%;
+                &:nth-child(2n+2){
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    @media screen and (max-width:$deviceMobile){
+        padding: 30px 10px 50px 10px;
+    }
+}
+
+@media screen and (max-width:$deviceMobile){
+    .ems-page-product-list{
+        aside.left-bar{
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            width: 100%;
+            height: 100%;
+            max-width: none;
+            padding: 70px 10px;
+            @include transition(all 0.2s ease-in-out);
+            @include setTransform(translateX(-100%));
+            .filter-header{
+                position: absolute;
+                top: 10px;
+                height: 50px;
+                left: 10px;
+                right: 10px;
+                padding: 15px 60px;
+                border-bottom: 1px solid #e9e9e9;
+                .btn-filter-close{
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    border: none;
+                    font-weight: 700;
+                }
+                &-title{
+                    font-size: 15px;
+                    font-weight: 700;
+                    letter-spacing: 0.2px;
+                    text-align: center;
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 100%;
+                }
+            }
+            .filter-footer-wrapper{
+                position: absolute;
+                bottom: 10px;
+                left: 10px;
+                right: 10px;
+            }
+            .filter-wrapper{
+                width: initial;
+                position: absolute;
+                left: 30px;
+                right: 30px;
+                top: 70px;
+                bottom: 70px;
+                overflow: auto;
+                padding: 5px 0;
+                    .kutuOzellikFiltre .kutuBodyOzellikFiltre #dvUrunKiyaslamaOzellik .urunKiyaslamaOzellik_ozellikAd,
+                    .kutuKategori .menuKategori>li>a{
+                        padding: 20px 36px 20px 10px;
+                        &:after,
+                        &:before{
+                            content:'';
+                            display: block;
+                            position: absolute;
+                            left:initial;
+                            right: 21px;
+                            top: 28px;
+                            width: 10px;
+                            height: 2px;
+                            background: #000;
+                            @include setTransform(rotate(0));
+                        }
+                        &:after{
+                            opacity: 0;
+                        }
+                        &.kapali{
+                            &:after{
+                                opacity: 1;
+                                @include setTransform(rotate(90deg));
+                            }
+                        }
+                    }
+                    .kutuOzellikFiltre .kutuBodyOzellikFiltre #dvUrunKiyaslamaOzellik .urunKiyaslamaOzellik_ozellikIcerik{
+                        padding: 5px 0 14px 30px;
+                    }
+            }
+        }
+        .ems-prd-list-sort {
+            display: none;
+            position: fixed;
+            width: 80%;
+            height: auto;
+            left: 10%;
+            bottom: -100%;
+            background: #fff;
+            z-index: 99;
+            padding: 20px;
+            transition: all 0.3s ease-in-out;
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            > ul > li {
+                width: 100%;
+                > a {
+                    display: block;
+                    width: 100%;
+                    line-height: 20px;
+                    height: 60px;
+                    text-align: center;
+                    padding: 20px;
+                    font-family: $fontDefault;
+                    font-size: 16px;
+                    letter-spacing: 1.9px;
+                    border-bottom: 1px solid #dddddd;
+                }
+                &:last-child a {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+    .mobile-filter-ready{
+        overflow: hidden;
+        .ems-page-product-list{
+            aside.left-bar{
+                display: block;
+            }
+        }
+    }
+    .mobile-filter-animate{
+        .ems-page-product-list{
+            aside.left-bar{
+                @include setTransform(translateX(0));
+            }
+        }
+    }
+    .mobile-sort-ready{
+        .vail-sort-list {
+            display: block;
+            z-index: 98;
+        }
+        .ems-prd-list-sort {
+            display: block;
+        }
+    }
+    .mobile-sort-animate{
+        .vail-sort-list {
+            opacity: 1;
+        }
+        .ems-prd-list-sort {
+            bottom: 0;
+        }
+    }
+}
+
+
+
+
+

@@ -1,0 +1,1454 @@
+.desktop-cart-button-wrap{
+    display: inline-block;
+    vertical-align: top;
+    > .desktop-cart-button{
+        display: inline-block;
+        vertical-align: top;
+        font-size: 16px;
+        font-family: $fontDefault;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        line-height: 15px;
+        padding: 2px 3px 16px 3px;
+        cursor:pointer;
+        position: relative;
+        &:after{
+            content:'';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 0;
+            opacity: 0;
+            background: $pink;
+            bottom: 0;
+            left: 0;
+            @include transition(all 0.12s ease-in-out);
+        }
+        // Test
+        span.text{
+            font-family: $fontDefault;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 0.3px;
+            color: $black;
+            height: 20px;
+            line-height: 20px;
+            @media screen and (max-width:1010px){
+                display: none;
+            }
+        }
+        em{
+            position: absolute;
+            top: -3px;
+            left: 12px;
+            background: $pink;
+            color: $white;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            font-size: 12px;
+            font-family: $fontDefault;
+            letter-spacing: 0.2px;
+            text-align: center;
+            line-height: 18px;
+            font-style: normal;
+        }
+        span.icon-bag{
+            font-size: 20px;
+            height: 20px;
+            line-height: 20px;
+            margin-right: 15px;
+        }
+        &:hover{
+            &:after{
+                height: 6px;
+                opacity: 1;
+            }
+        }
+        @media screen and (max-width: 1010px){
+            padding-left: 9px;
+        }
+    }
+}
+.mod-mini-cart{
+    display: inline-block;
+    vertical-align: top;
+    &-inner{
+
+    }
+    &-header{
+        display: none;
+        font-family: $fontDefault;
+        font-weight: 600;
+        font-size: 16px;
+        letter-spacing: 0.3px;
+        color: $black;
+        > .ems-cart-info{
+            display: inline-block;
+            vertical-align: top;
+            font-size: 16px;
+            font-family: $fontDefault;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            line-height: 15px;
+            padding: 0 0 0 12px;
+            cursor:pointer;
+            position: relative;
+            > span[id$="lbfKUTU_SEPET"]{
+                position: relative;
+                padding: 2px 3px 20px 3px;
+                display: block;
+                &:after{
+                    content:'';
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 0;
+                    opacity: 0;
+                    background: $pink;
+                    bottom: 0;
+                    left: 0;
+                    @include transition(all 0.12s ease-in-out);
+                }
+                span{
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                .icon-bag{
+                    font-size: 20px;
+                    height: 20px;
+                    line-height: 20px;
+                    margin-right: 15px;
+                }
+                .text{
+                    height: 20px;
+                    line-height: 20px;
+                    @media screen and (max-width:1010px){
+                        display: none;
+                    }
+                }
+            }
+            > #lblUrunAdet{
+                position: absolute;
+                top: -3px;
+                left: 26px;
+                background: $pink;
+                color: $white;
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                font-size: 12px;
+                font-family: $fontDefault;
+                letter-spacing: 0.2px;
+                text-align: center;
+                line-height: 18px;
+            }
+            &:hover{
+                span{
+                    &:after{
+                        height: 6px;
+                        opacity: 1;
+                    }
+                }
+            }
+            @media screen and (max-width: 1010px){
+                padding-left: 9px;
+            }
+        }
+    }
+    &-wrapper{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 450px;
+        background: rgba(255,255,255,0.95);
+        z-index: 9999;
+        @include setTransform(translateX(100%));
+        @include transition(all 0.4s ease-in-out);
+        overflow: hidden;
+        padding: 118px 0 150px 0;
+        @at-root{
+            .mini-cart-ready &,
+            .opened &{
+                @include setTransform(translateX(0));
+            }
+        }
+        .mmc-header{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 118px;
+            padding: 50px 20px 0 20px;
+            text-align: center;
+            > span{
+                display: inline-block;
+                vertical-align: middle;
+                width: 100%;
+                text-align: center;
+                font-size: 20px;
+                font-weight: 700;
+                > span{
+                    display: inline-block;
+                    vertical-align: middle;
+                    height: 25px;
+                    line-height: 26px;
+                    &[class*="icon-"]{
+                        font-size: 25px;
+                        margin-right: 7px;
+                    }
+                }
+            }
+        }
+        .mod-mini-cart-body{
+            position: relative;
+            width: 100%;
+            max-height: 100%;
+            overflow: auto;
+            padding: 10px 30px;
+            .kutuSepet_icerik{
+                > .ems-col{
+                    position: relative;
+                    width: 100%;
+                    display: inline-block;
+                    vertical-align: top;
+                    padding-left: 120px;
+                    min-height: 120px;
+                    padding-bottom: 20px;
+                    margin-bottom: 20px;
+                    &:after{
+                        content:'';
+                        display: block;
+                        width: 90%;
+                        left: 5%;
+                        bottom: 0;
+                        height: 1px;
+                        background: #e9e9e9;
+                        position: absolute;
+                    }
+                    .cart-prd-image{
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100px;
+                        overflow: hidden;
+                    }
+                    .cart-prd-remove{
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        > a{
+                            display: block;
+                            width: 15px;
+                            height: 15px;
+                            text-align: center;
+                            line-height: 15px;
+                            color: #d1d1d1;
+                            font-size: 14px;
+                            &:after{
+                                content:$icon-close;
+                                @extend .icon;
+                                display: inline-block;
+                                vertical-align: top;
+                                
+                            }
+                            > i{
+                                display: none;
+                            }
+                        }
+                    }
+                    .cart-prd-name{
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 100%;
+                        font-family: $fontDefault;
+                        font-weight: 600;
+                        font-size: 16px;
+                        letter-spacing: 0.3px;
+                        color: $black;
+                        overflow: hidden;
+                        max-height: 38px;
+                    }
+                    .cart-prd-quantity{
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 100%;
+                        margin-top: 5px;
+                        &:after{
+                            content:'adet';
+                            font-size: 15px;
+                            font-weight: 600;
+                            letter-spacing: 0.3px;
+                            color: $black;
+                            display: inline-block;
+                        }
+                        input{
+                            display: inline-block;
+                            line-height: 1;
+                            width: 15px;
+                            height: auto;
+                            min-width: 0;
+                            background: none;
+                            border: none;
+                            margin: 0;
+                            padding: 0;
+                            font-family: $fontDefault;
+                            font-size: 15px;
+                            font-weight: 600;
+                            letter-spacing: 0.3px;
+                            color: $black;
+                        }
+                        .iControl{
+                            display: none;
+                        }
+                    }
+                    .cart-prd-price{
+                        position: absolute;
+                        bottom: 20px;
+                        left: 120px;
+                        display: inline-block;
+                        vertical-align: top;
+                        height: 25px;
+                        line-height: 25px;
+                        font-weight: 700;
+                        font-size: 20px;
+                        line-height: 22px;
+                        letter-spacing: 0.4px;
+                        .d{
+                            font-size: 12px;
+                            letter-spacing: 0.2px;
+                        }
+                        .pb1{
+                            display: inline-block;
+                            vertical-align: bottom;
+                            font-size: 12px;
+                            letter-spacing: 0.2px;
+                            margin-left: 5px;
+                        }
+                    }
+                }
+            }
+        }
+        .mod-mini-cart-footer{
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            max-height: 150px;
+            padding: 0 48px 45px 48px;
+            > span{
+                display: inline-block;
+                vertical-align: top;
+                width: 50%;
+                line-height: 35px;
+                height: 55px;
+                font-size: 17px;
+                padding: 0 10px 20px 10px;
+                font-weight: 700;
+                &[id$="lbfkutuSepet1"]{
+                    letter-spacing: 0.3px;
+                    color: $black;
+                }
+                &[id$="UrunTutari"]{
+                    color:#7a7a7a;
+                    text-align: right;
+                    .d{
+                        font-size: 14px;
+                    }
+                    .pb1{
+                        display: inline-block;
+                        font-size: 14px;
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+        @media screen and (max-width:$deviceMobile){
+            width: 100%;
+            padding: 90px 0 130px 0;
+            .mmc-header{
+                height: 90px;
+                padding: 30px 20px 0 20px;
+                .mmc-close-btn{
+                    font-size: 16px;
+                    position: absolute;
+                    right: 30px;
+                    top: 40px;
+                }
+            }
+            .mod-mini-cart-footer{
+                padding: 0;
+                .lnkSepet{
+                    padding: 16.5px 10px;
+                }
+                span[id$="lbfkutuSepet1"]{
+                    padding-left: 50px;
+                }
+                span[id$="UrunTutari"]{
+                    padding-right: 50px;
+                }
+            }
+        }
+    }
+}
+
+.ems-page-cart{
+    position: relative;
+    width: 100%;
+    padding-bottom: 160px;
+    .page-top-title{
+        display: none;
+    }
+    > .section-row-1{
+        position: relative;
+        width: 100%;
+        background: #e7e7e7;
+        padding: 20px 0;
+        margin-top: 28px;
+    }
+    > .section-row-2{
+        margin-top: 20px;
+    }
+    .ems-cart-button{
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 10px 40px;
+        width: 100%;
+        &-top{
+            padding-right: 0;
+            padding-left: 0;
+        }
+        .same-address,
+        .add-new-address,
+        .ems-cart-btn{
+            display: inline-block;
+            vertical-align: top;
+            width: 50%;
+            &.prev{
+                text-align: left;
+            }
+            &.next{
+                text-align: right;
+            }
+            /*.btnSepetGuncelle{
+                display: none;
+            }*/
+        }
+        .same-address{
+            text-align: right;
+            padding: 10px 0;
+            .dvFarkliFatAdrSec{
+                display: inline-block;
+                vertical-align: top;
+                position: relative;
+                padding-left: 47px;
+                input{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    z-index: 2;
+                    left: 0;
+                    top: 0;
+                    margin-right: 0;
+                    &:checked + span:after{
+                        left: 19px;
+                    }
+                    &:checked + span:before{
+                        background: $pink;
+                    }
+                }
+                span{
+                    font-size: 14px;
+                    color: #d1d1d1;
+                    line-height: 20px;
+                    &:before{
+                        content:'';
+                        width: 33px;
+                        height: 16px;
+                        background: $black;
+                        padding: 2px;
+                        border-radius: 23px;
+                        display: block;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        @include transition(all 0.2s ease-in-out);
+                    }
+                    &:after{
+                        content:'';
+                        display: block;
+                        position: absolute;
+                        left: 2px;
+                        top: 2px;
+                        border-radius: 50%;
+                        width: 16px;
+                        height: 16px;
+                        background: $white;
+                        @include transition(all 0.2s ease-in-out);
+                    }
+                }
+            }
+        }
+        .add-new-address{
+            text-align: left;
+        }
+        
+    }
+    .ems-page-order-cart{
+        .cart-section-left{
+            &:before{
+                content:$langTR_siparis_ozeti;
+                display: block;
+                width: 100%;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #e9e9e9;
+                font-size: 15px;
+                font-weight: 600;
+                color: $black;
+                @at-root .step0{
+                    .cart-section-left:before{
+                        display: none !important;
+                    }
+                }
+            }
+            .sepet-aciklama-desc{
+                display: none;
+            }
+        }
+        .cart-section-right{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 88;
+            background: #f4f4f4;
+            .ems-cart-summary{
+                width: 100%;
+                padding: 30px 0;
+            }
+            .col-1,
+            .col-2,
+            .col-3{
+                display: inline-block;
+                vertical-align: top;
+                width: 33.33%;
+                padding: 0 40px;
+            }
+            .col-1{
+                .pnlDipToplamTable{
+                    width: 100%;
+                    tbody{
+                        tr{
+                            th{
+                                width: 70%;
+                                text-align: left !important;
+                                > span{
+                                    font-weight: 600;
+                                    font-size: 14px;
+                                    line-height: 21px;
+                                    letter-spacing: 0.3px;
+                                    color: $black;
+                                }
+                            }
+                            td{
+                                width: 30%;
+                                > span{
+                                    font-weight: 600;
+                                    font-size: 14px;
+                                    line-height: 21px;
+                                    letter-spacing: 0.2px;
+                                    color: #7a7a7a;
+                                    .pb1{
+                                        display: inline-block;
+                                        vertical-align: top;
+                                        margin-left: 3px;
+                                    }
+                                }
+                            }
+                        }
+                    } 
+                    .pnlDipToplam_bankaKomisyon,
+                    .pnlDipToplam_sipToplam{
+                        display: none;
+                    }                   
+                }
+                .ems-cart-coupon{
+                    position: relative;
+                    height: 31px;
+                    width: 100%;
+                    z-index: 5;
+                    @at-root{
+                        .step1 .ems-cart-coupon{
+                            display: none;
+                        }
+                    }
+                    > span{
+                        display: block;
+                        max-width: 180px;
+                        cursor: pointer;
+                        line-height: 31px;
+                        font-size: 13px;
+                        letter-spacing: 0.3px;
+                        color: $black;
+                    }
+                    &-body{
+                        position: absolute;
+                        display: none;
+                        width: 270px;
+                        background: rgba(0,0,0,0.95);
+                        padding: 20px;
+                        bottom: 33px;
+                        @extend .animated;
+                        @extend .bounceIn;
+                        z-index: 8;
+                        input{
+                            margin: 0;
+                            border: 1px solid #424242;
+                            background: #424242; 
+                            width: 197px !important;
+                            color: #adadad;
+                            padding: 5px;
+                            font-size: 14px;
+                            display: inline-block;
+                            vertical-align: top;
+                        }
+                        span[id$="lblHCK_HATA"]{
+                            color: #fff;
+                            font-size: 12px;
+                            margin-top: 10px;
+                            display: block;
+                            &:empty{
+                                display: none !important;
+                            }
+                        }
+                        &:after{
+                            content: $icon-caret-down;
+                            @extend .icon;
+                            position: absolute;
+                            color: rgba(0,0,0,0.95);
+                            bottom: -11px;
+                            font-size: 15px;
+                            left: 20px;
+                        }
+                    }
+                    &.opened{
+                        .ems-cart-coupon-body{
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .col-2{
+                > div{
+                    &:first-child{
+                        margin-bottom: 10px;
+                    }
+                    > div{
+                        > div{
+                            position: relative;
+                            width: 100%;
+                            padding-left: 36px;
+                            .checkbox{
+                                position: absolute;
+                                left: 0;
+                                + span{
+                                    font-size: 15px;
+                                    line-height: 22px;
+                                    color: $black;
+                                }
+                            }
+                        }
+                    }
+                    > .tableTitleDefault {
+                        display: none;
+                    }
+                }
+                .pageSiparisOnay_btnOnBilgilendirmeFormOnizle{
+                    display: none;
+                }
+            }
+            .col-3{
+                .total-price-append-wrap{
+                    padding: 9px 10px;
+                    margin-bottom: 20px;
+                    font-size: 17px;
+                    font-weight: 700;
+                    letter-spacing: 0.3px;
+                    line-height: 1;
+                    > div{
+                        display: inline-block;
+                        vertical-align: top;
+                        &.label{
+                            width: 40%;
+                        }
+                        &.text{
+                            width: 60%;
+                            color: #7a7a7a;
+                            text-align: right;
+                            .pb1{
+                                display: inline !important;
+                            }
+                        }
+                    }
+                }
+            }
+            @media screen and (max-width:$deviceMobile){
+                .ems-cart-summary{
+                    padding: 20px 0 0 0;
+                    > div{
+                        width: 100%;
+                        padding: 0;
+                    }
+                    > .col-1{
+                        padding: 10px 50px;
+                        .ems-cart-coupon{
+                            > span{
+                                margin: 10px auto 0;
+                                border-top: 1px solid #ccc;
+                                border-bottom: 1px solid #ccc;
+                                max-width: none;
+                                text-align: center;
+                            }
+                            &-body{
+                                width: 100%;
+                                &:after{
+                                    left: 50%;
+                                }
+                                input{
+                                    width: calc(100% - 50px) !important;
+                                    height: 50px;
+                                    line-height: 50px;
+                                }
+                                a.btnHediyeCekiKullan {
+                                    width: 50px;
+                                    height: 50px;
+                                    line-height: 50px;
+                                }
+                            }
+                        }
+                    }
+                    > .col-2{
+                        padding: 0 50px;
+                        &:empty{
+                            display: none;
+                        }
+                    }
+                    > .col-3{
+                        a{
+                            padding:21.5px 0;
+                            margin-left: 0 !important;
+                        }
+                        .total-price-append-wrap{
+                            padding: 10px 50px;
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .ems-page-order-delivery{
+        .ems-page-order-cart{
+            .cart-section-left{
+                display: none;
+            }
+        }
+        .ems-grid-address{
+            display: inline-block;
+            vertical-align: top;
+            .ems-grid-row{
+                float: left;
+                width: 49%;
+                margin-right: 2%;
+                min-height: 168px;
+                &:nth-child(even){
+                    margin-right: 0;
+                }
+                .col-1{
+                    padding-bottom: 55px;
+                }
+                .col-2{
+                    position: static;
+                    .ems-adrress-buttons{
+                        &.item-2{
+                            position: absolute;
+                            left: 20px;
+                            bottom: 20px;
+                            a{
+                                width: auto;
+                                height: 35px;
+                                line-height: 35px;
+                                padding: 0;
+                                min-width: 150px;
+                                &.emos_selected{
+                                    background: $pink;
+                                    border-color: transparent;
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+                @media screen and (max-width:$deviceMobile){
+                    width: 100%;
+                    float: none;
+                    margin-right: 0 !important;
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+                    .col-2{
+                        position: static;
+                        .ems-address-buttons.item-1{
+                            position: absolute;
+                            right: 14px;
+                            top: 14px;
+                        }
+                    }
+                }
+            }
+        }
+        .ems-delivery-tabs{
+            position: relative;
+            .ems-delivery-tab-header{
+                display: inline-block;
+                vertical-align: top;
+                width: 100%;
+                margin: 0 0 17px 0 !important;
+            }
+            .ems-wrp{
+                ul{
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 100%;
+                    > li{
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 95px;
+                        height: auto;
+                        border: 1px solid #eaeaea;
+                        padding: 11px;
+                        margin-right: 10px;
+                        text-align: center;
+                        .kargoAdi{
+                            display: none;
+                        }
+                        .fiyat{
+                            font-size: 15px;
+                            line-height: 20px;
+                            color: #9e9e9e;
+                            text-align: center;
+                            display: block;
+                            margin-bottom: 10px;
+                        }
+                        input{
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+            .ems-delivery-info-tab{
+                display: none;
+            }
+        }
+    }
+    .ems-page-new-address{
+        max-width: 420px;
+        margin: 0 auto;
+       .page-top-title{
+           display: block;
+           font-size: 15px;
+           font-weight: 600;
+           line-height: 15px;
+           color: $black;
+           text-align: center;
+           margin-bottom: 40px;
+           font-family: $fontDefault;
+       }
+       .page-top-desc{
+           display: none;
+       }
+       .ems-field.button{
+           text-align: center;
+           margin: 40px 0 100px 0;
+           a{
+               min-width: 150px;
+           }
+       }
+    }
+    .ems-page-order-payment{
+        .ems-grid-address{
+            padding: 0 40px;
+            & > .ems-grid-row{
+                margin-top: 28px;
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                width: calc(50% - 10px);
+                &:first-child{
+                    margin-right: 10px;
+                }
+                &:last-child{
+                    margin-left: 10px;
+                }
+                .head{
+                    position: absolute;
+                    top: -28px;
+                    left: 0;
+                    width: 100%;
+                    display: block;
+                    font-size: 15px;
+                    color: $black;
+                    font-weight: 600;
+                }
+                .content{
+                    display: block;
+                    width: 100%;
+                    font-size: 15px;
+                    color: #a0a0a0;
+                    line-height: 18px;
+                    min-height: 60px;
+                }
+            }
+        }
+        .page-top-title{
+            display: block;
+            margin-top: 30px;
+            font-family: $fontDefault;
+        }
+        .ems-cart-pay-tab{
+            display: none;
+        }
+        .ems-cart-pay-type {
+            position: relative;
+            width: 100%;
+            border: 1px solid #eaeaea;
+            display: inline-block;
+            vertical-align: top;
+            margin-bottom: 80px;
+            .tableTitleDefault {
+                display: none;
+            }
+            //kart
+            .tableOdemeBilgiKrediKarti {
+                float: left;
+                width: 50%;
+                padding: 30px;
+                border-right: 1px solid #eaeaea; 
+                tbody{
+                    width: 100%;
+                    max-width: 275px;
+                    display: inline-block;
+                    vertical-align: top;
+                        tr{
+                            display: block;
+                            width: 100%;
+                            margin-bottom: 20px;
+                                &:nth-child(2){
+                                    float: left;
+                                    width: 50%;
+                                }
+                                &:nth-child(3){
+                                    float: right;
+                                    width: 50%;
+                                }
+                                &:nth-child(4){
+                                    margin-bottom: 0;
+                                }
+                                &:last-child{
+                                    display: none;
+                                }
+                        }
+                }
+                th {
+                    display: block;
+                    text-align: left;
+                    font-family: $fontDefault;
+                    font-size: 13px;
+                    font-weight: normal;
+                    color: #979797;
+                    margin: 0;
+                    line-height: 22px;
+                    &.tableOdemeBilgiKrediKarti_thlbfODM_KKARTCVCNO{
+                        text-align: left;
+                        padding-left: 40px;
+                    }
+                }
+                td {
+                    display: block;
+                    position: relative;
+                    input {
+                        width: 100% !important;
+                        margin-top: 0;
+                    }
+                    select{
+                        margin-top: 0;
+                    }
+                    &.tableOdemeBilgiKrediKarti_tddrpKSA_SPR_ID {
+                        position: relative;
+                        &:before,
+                        &:after{
+                            content:$icon-angle-down;
+                            display: block;
+                            font-family: 'icomoon' !important;
+                            speak: none;
+                            font-style: normal;
+                            font-weight: normal;
+                            font-variant: normal;
+                            text-transform: none;
+                            line-height: 1;
+                            -webkit-font-smoothing: antialiased;
+                            -moz-osx-font-smoothing: grayscale;
+                            position: absolute;
+                            right: 5px;
+                            bottom: 10px;
+                            font-size: 10px;
+                        }
+                        &:before{
+                            right:60%;
+                        }
+                        select {
+                            width: 43% !important;
+                            &:first-child {
+                                margin-right: 14%;
+                            }
+                        }
+                    }
+                    &.tableOdemeBilgiKrediKarti_tdtxtKKARTCVCNO {
+                        padding-left: 40px;
+                        input {
+                            vertical-align: middle;
+                            width: 50px !important;
+                            
+                        }
+                        > span {
+                            display: inline-block;
+                            vertical-align: middle;
+                            width: 35%;
+                        }
+                        #cvcnedir{
+                            margin-left: 10px;
+                            display: inline-block;
+                            vertical-align: middle;
+                            width: 22px;
+                            height: 22px;
+                            text-align: center;
+                            line-height: 20px;
+                            border-radius: 50%;
+                            border:1px solid #979797;
+                            i{
+                                font-size: 10px;
+                                color: #979797;
+                            }
+                        }
+                    }
+                    &.tableOdemeBilgiKrediKarti_thlbfbtnOdemeTaksit {
+                        display: none;
+                    }
+                    .div-cc-carttype {
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        margin-top: -13.5px;
+                        img {
+                            display: block;
+                        }
+                    }
+                    .cvc-info {
+                        position: relative;
+                        font-size: 15px;
+                        color: $blue;
+                        > b {
+                            font-weight: bold;
+                            text-decoration: underline;
+                            cursor:pointer;
+                        }
+                        > span {
+                            display: none;
+                            position: absolute;
+                            left: 0;
+                            top: -50%;
+                            z-index: 2;
+                            width: 300px;
+                            background: #fff;
+                            padding: 10px;
+                            border: 1px solid $borderColor;
+                        }
+                        &:hover {
+                            > span {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+            //taksit
+            .pageOdemeBilgi_odemeTaksit {
+                float: right;
+                width: 50%;
+                padding: 30px;
+                &:empty{
+                    display: none;
+                }
+                > img {
+                    display: none;
+                    margin: 12px auto;
+                }
+                > .pageOdemeBilgi_lbfOdemeTaksit {
+                    text-align: center;
+                    background: #f00;
+                    padding: 5px;
+                    color: #fff;
+                    font-size: 14px;
+                }
+                .tableOdemeTaksit {
+                    width: 100%;
+                    table-layout: fixed;
+                    border-collapse: collapse;
+                    td {
+                        font-family: $fontDefault;
+                        font-size: 14px;
+                        padding: 10px;
+                        font-weight: 500;
+                        text-align: center;
+                        input {
+                            margin-right: 0;
+                        }
+                        &:nth-child(1) {
+                            width: 24px;
+                        }
+                    }
+                    
+                }
+                &:before{
+                    content:$langTR_odeme_sekli;
+                    display: block;
+                    width: 100%;
+                    margin-bottom: 20px;
+                    font-size: 15px;
+                    color: $black;
+                    font-weight: 600;
+                }
+            }
+            //kartpuan
+            .ems-pay-point {
+                max-width: 350px;
+                position: absolute;
+                bottom: -50px;
+                left: 0;
+                padding: 10px;
+                [id$="BONUSPARAHESAPLANIYOR"] {
+                    display: block;
+                    font-size: 14px;
+                }
+                .pageOdemeBilgi_chkKrediKartiBonusPara{
+                    position: relative;
+                    > span:not(.checkbox) {
+                        margin-left: 35px;
+                    }
+                    span[id$="lbfSIP_BONUSPARAHESAPLANIYOR"]{
+                        position: absolute;
+                        background: #fff;
+                        padding: 3px;
+                        left: 0;
+                        top: 0;
+                        width: 340px;
+                        @extend .animated;
+                        @extend .bounceIn;
+                    }
+                }
+            }
+            //Havale
+            .ems-pay-transfer{
+                position: relative;
+                width: 100%;
+                display: inline-block;
+                vertical-align: top;
+                &:empty{
+                    display: none;
+                }
+                .tableOdemeBilgiHavale{
+                    display: block;
+                    width: 100%;
+                        & > tbody > tr:first-child{
+                            display: none;
+                        }
+                        & > tbody > tr > td,
+                        table,
+                        tbody,
+                        tbody tr{
+                            display: inline-block;
+                            vertical-align: middle;
+                            width: 100%;
+                        }
+                        table > tbody > tr{
+                            border-bottom: 1px solid #eaeaea;
+                            padding: 20px;
+                                &:last-child{
+                                    border-bottom: 0;
+                                }
+                                & > td{
+                                    padding: 10px;
+                                        &.link{
+                                            float:right;
+                                            width: 30%;
+                                            text-align: right;
+                                                @media screen and (max-width:$deviceMobile){
+                                                    width: 40%;
+                                                }
+                                                a{
+                                                    text-transform: uppercase;
+                                                }
+                                        }
+                                        &.logo{
+                                            display: block;
+                                            float: left;
+                                                @media screen and (max-width:$deviceMobile){
+                                                    display: none;
+                                                }
+                                            width: 20%;
+                                        }
+                                        &.banka{
+                                            float: left;
+                                            width: 50%;
+                                                @media screen and (max-width:$deviceMobile){
+                                                    width: 60%;
+                                                }
+                                                b{
+                                                    display: block;
+                                                    width: 100%;
+                                                    font-family: $fontDefault;
+                                                    font-size: 16px;
+                                                    letter-spacing: 1.8px;
+                                                    color: #000;
+                                                }
+                                                br{
+                                                    display: none;
+                                                }
+                                                span{
+                                                    display: block;
+                                                    width: 100%;
+                                                    font-family: $fontDefault;
+                                                    font-size: 15px;
+                                                    line-height: 20px;
+                                                    color: #9e9e9e;
+                                                    word-break: break-all;
+                                                }
+                                        }
+                                }
+                        }
+                }
+            }
+            //diger
+            .ems-pay-other {
+                padding-top: 20px;
+                &:empty{
+                    display: none;
+                }
+                .OdemeBilgiPesinDigerOdemeNotu {
+                    br {display: none;}
+                    > span {
+                        display: block;
+                        text-align: left;
+                        font-family: "DM";
+                        font-size: 13px;
+                        color: #002b5c;
+                        margin: 10px 0 5px;
+                    }
+                    textarea {
+                        width: 100% !important;
+                        height: 100px;
+                        resize: none;
+                    }
+                }
+            }
+            @media screen and (max-width: $deviceMobile){
+                border:none;
+                .tableOdemeBilgiKrediKarti{
+                    width: 100%;
+                    border:none;
+                    padding: 20px;
+                    tbody{
+                        max-width: none;
+                    }
+                }
+                .pageOdemeBilgi_odemeTaksit{
+                    width: 100%;
+                }
+            }
+        }
+        .ems-pay-type-desc {
+            display: none;
+        }
+        //sozlesmeler
+        .ems-grid-forms{
+            position: relative;
+            width: 100%;
+            display: inline-block;
+            vertical-align: top;
+            margin-bottom: 50px;
+            & > div{
+                display: inline-block;
+                vertical-align: top;
+                width: calc(50% - 10px);
+                &:first-child{
+                    margin-right: 10px;
+                }
+                &:last-child{
+                    margin-left: 10px;
+                }
+                .head-title{
+                    display: block;
+                    width: 100%;
+                    margin-bottom: 20px;
+                    font-size: 15px;
+                    color: $black;
+                    font-weight: 600;
+                }
+                > span:not(.head-title){
+                    border: 1px solid #eaeaea;
+                    padding: 20px 25px;
+                    overflow: auto !important;
+                    height: 280px !important;
+                    table{
+                        max-width: 100% !important;
+                        width: auto;
+                    }
+                }
+            }
+            @media screen and (max-width:$deviceMobile){
+                margin-top: 25px;
+                margin-bottom: 25px;
+                > div{
+                    width: 100%;
+                    margin: 0 0 25px 0 !important;
+                }
+            }
+        }
+    }
+    @media screen and (max-width:$deviceMobile){
+        padding-bottom: 270px;
+        .section-row-1{
+            margin-top: 0;
+        }
+        .section-row-2{
+            padding: 10px;
+            margin: 0;
+            .information-icons{
+                display: none;
+            }
+        }
+        .ems-page-order-payment{
+            padding: 20px;
+            margin-bottom: 30px;
+            .page-top-title{
+                margin: 0;
+            }
+            .ems-grid-address{
+                display: none;
+            }
+            .ems-page-order-cart{
+                .ems-grid-cart .ems-grid-row{
+                    padding-right: 10px;
+                }
+                .cart-section-left{
+                    .ems-cart-button{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .ems-cart-button{
+            margin-bottom: 20px;
+            @at-root{
+                .ems-page-order-cart .ems-cart-button{
+                    display: none !important;
+                }
+            }
+            > div{
+                width: 100% !important;
+                text-align: left !important;
+            }
+        }
+       
+    }
+}
+.btnSiparisOnay + .btnSiparisOnay{
+    margin-left: 0 !important;
+    margin-top: 10px;
+}
+// Sipariş Adımları
+.tabloTabBtnAdimSiparis{
+    padding: 0 40px;
+    @extend .tableFull;
+    @media screen and (max-width:$deviceMobile){
+        padding: 0;
+    }
+    > tbody{
+        > tr{
+            > td{
+                > span{
+                    width: 33.33%;
+                    display: inline-block;
+                    vertical-align: top;
+                    color: #adadad;
+                    a{
+                        display: inline-block;
+                        vertical-align: middle;
+                        .icon{
+                            display: inline-block;
+                            vertical-align: middle;
+                            width: 37px;
+                            height: 37px;
+                            margin-right: 20px;
+                            text-align: center;
+                            line-height: 37px;
+                            font-size: 37px;
+                        }
+                        .text{
+                            display: inline-block;
+                            vertical-align: middle;
+                            height: 37px;
+                            line-height: 37px;
+                            font-size: 14px;
+                            letter-spacing: 0.3px;
+                            font-weight: 600;
+                        }
+                    }
+                    &:first-child{
+                        text-align: left;
+                    }
+                    &:last-child{
+                        text-align: right;
+                    }
+                    &.tabBtnSelectedDefault{
+                        color: #424242;
+                        .icon-circle{
+                            border-color: #424242;
+                        }
+                    }
+                    @media screen and (max-width:$deviceMobile){
+                        text-align: center !important;
+                        > a{
+                            .icon{
+                                display: block;
+                                text-align: center;
+                                margin: 0 auto;
+                            }
+                            .text{
+                                display: block;
+                                width: 100%;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
