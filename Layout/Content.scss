@@ -236,7 +236,7 @@
     .urunPaging{
       display: none;
     }
-    
+
     .descHolderWrap{
         > span:nth-of-type(even){
             direction: rtl;
@@ -599,7 +599,7 @@
     }
     }
   }
-  
+
 }
 .ems-page-designer{
   .pageBanner{
@@ -702,7 +702,7 @@
                     }
                   }
               }
-              
+
           }
           @media screen and (max-width:$deviceMobile){
             &{
@@ -725,7 +725,7 @@
                     font-size: 15px;
                     line-height: 20px;
                     letter-spacing: 0.3px;
-                    color: $black; 
+                    color: $black;
                     position: static;
                     top: initial;
                     left: initial;
@@ -753,7 +753,7 @@
           }
         }
       }
-      
+
     }
   }
 }
@@ -1190,7 +1190,7 @@
       color: $black;
     }
   }
-  
+
   .campaign-wrap{
     width: 100%;
     .campaign-list{
@@ -1215,7 +1215,7 @@
           }
           figcaption{
             position: relative;
-            height: 100px;
+            height: 125px;
             width: 100%;
             overflow: hidden;
             padding: 17px 23px 23px 23px;
