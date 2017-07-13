@@ -126,7 +126,23 @@
                 max-width: 52%;
                 float: right;
                 padding-top: 20px;
-
+                .mod-lang{
+                    display:inline-block !important;
+                    margin-left:10px;
+                    .mod-lang-header{
+                      display: none;
+                    }
+                    .mod-lang-body{
+                      ul{
+                        display: flex;
+                        flex-wrap: nowrap;
+                        justify-content: space-around;
+                        li a img[src]:not(empty){
+                          margin:0 5px;
+                        }
+                      }
+                    }
+                }
                 > div{
                     display: inline-block;
                     vertical-align: top;
@@ -140,21 +156,7 @@
                         font-weight: 600;
                     }
                     &.mod-lang{
-                        display:inline-block !important;
-                        margin-left:10px;
-                        .mod-lang-header{
-                          display: none;
-                        }
-                        .mod-lang-body{
-                          ul{
-                            display: flex;
-                            flex-wrap: nowrap;
-                            justify-content: space-around;
-                            li a img[src]:not(empty){
-                              margin:0 5px;
-                            }
-                          }
-                        }
+                      display: none !important;
                     }
                 }
             }
